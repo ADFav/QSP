@@ -1,11 +1,11 @@
 // public/js/controllers/MainCtrl.js
 angular.module('MainCtrl', []).controller('MainController', function($scope,$http) {
   
-  $scope.qid       = -1;
+  $scope.qid       = 1;
   $scope.question  = "";
   $scope.response_1 = "";
   $scope.response_2 = "";  
-  $scope.userid = 3; //THIS IS A HUGE MISTAKE!
+  $scope.userid = 1; //THIS IS A HUGE MISTAKE!
   
   var switchQuestion = function(q_id){
     $http.get('/questions?id='+q_id).success(function(q_obj){
@@ -15,13 +15,14 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
       $scope.qid        = q_obj[0]._id;
     });
   };  
-  switchQuestion(4);
+  
+  switchQuestion($scope.qid)
   
   $scope.postAns   = function(resp){
     $http.post("/newResponse",{uid:$scope.userid,qid:$scope.qid,response:resp}).
       success(function(data){
         console.log(data);
-        switchQuestion(2);    
+        switchQuestion($scope.qid+1);    
     }).
       error (function(data){
         console.log(data);

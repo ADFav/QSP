@@ -39,6 +39,7 @@ module.exports = function(app) {
   
   app.route('/newResponse').post(function(req,res){
     var q  = req.body;
+    console.log(q);
     User.findOne({_id:q.uid},function(err,user){
       if(err) throw err;
       var newResponse = new Response({
@@ -115,11 +116,13 @@ module.exports = function(app) {
   
   app.post('/addUser', function(req,res){
     User.count({},function(err,count){
-      var newUser = new User(req.body.concat({_id:(count+1)}));
-      newUser.save(function(err){
+      var userSchema = req.body;
+      userSchema._id = count+1;
+      var newUser = new User(userSchema);
+      newUser.save(function(err2){
         if(err) throw err;
-        res.send("User added to the database");
-      })
+        res.send("Question added to the database");
+      });
     });
   });
  
