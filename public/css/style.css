@@ -1,0 +1,224 @@
+/*style.css*/
+h1, h2, h3, h4, h5, h6{
+  margin : 0;
+}
+
+body{
+  height : 0px;
+}
+
+.main-container{
+  position : absolute;
+  background-color : #666;
+  width : 100%;
+  height : 100%;
+  padding : 0px;
+  margin : 0px;
+  height : 100%;
+  width : 100%;
+}
+
+.main-container *{
+  position : relative;
+  display : inline-block;
+  box-sizing : border-box;
+  color : white;
+}
+
+.main-container header{
+  margin : 0%;
+  width: 100%;
+  height : 9%;
+  background-color: #CCC;
+  color : black;
+}
+
+header #logo{
+  position : absolute;
+  left : 50%;
+  top : 50%;
+  transform : translate(-50%,-50%);
+  font-size : 36pt;
+  color : black;
+}
+
+#menu-icon{
+  position: absolute;
+  right : 5%;
+}
+
+#question-box{
+  height : 60%;
+  width : 100%;
+}
+
+.box{
+  border-width : 25px;
+  border-style: solid;
+}
+
+.grey{
+  background-color : #999;
+  border-color : #777;
+}
+
+.blue{
+  background-color : #99F;
+  border-color : #77F;
+}
+
+.red{
+  background-color : #F99;
+  border-color : #F77;
+}
+
+.answer{
+  width : 49.5%;
+  height : 29%;
+  margin-bottom :  0%;
+  position : absolute;
+  bottom : 0px;
+}
+
+.answer.box.left{
+  left : 0px;
+  border-radius : 20% 0% 0% 20%;
+}
+
+.answer.box.right{
+  right : 0px;
+  border-radius : 0% 20% 20% 0%;
+}
+
+.box span{
+  font-size : 24pt;
+  color : white;
+  position : absolute;
+  top : 50%;
+  left : 50%;
+  transform : translate(-50%,-50%);
+}
+
+/* ------- STATS VIEW -----*/
+
+/*for design purposes only*/
+/* .stats-view *{
+  border : solid 3px red;
+  background-color : rgba(0,255,0,0.25);
+} */
+/*end preview settings*/
+
+.main-container.stats-view{
+  background-color : #555;
+}
+
+.main-container.stats-view *{
+  position : relative;
+  box-sizing : border-box;
+}
+
+.stats-view #question{
+  width : 100%;
+  height : 17%;
+  margin-top : 5%;  
+  text-align : center;
+}
+
+.stats-view #pos-resp-text, .stats-view #neg-resp-text{
+  position : absolute;
+  top : 0;
+  width : 15%;
+  height : 100%;
+}
+
+.stats-view #pos-resp-text{
+  left :0;
+}
+
+.stats-view #neg-resp-text{
+  right :0;
+}
+
+.stats-view #question-text{
+  position : absolute;
+  left : 20%;
+  top : 0%;
+  width : 60%;
+  margin : 0;
+  height : 100%;
+}
+
+.stats-view #total{
+  margin-top : 5%;
+  height : 10%;
+  width : 100%;
+}
+
+.stats-view .left-col, .stats-view .right-col{
+  position : absolute;
+  width : 10%;
+  height : 100%;
+}
+
+.stats-view .left-col{
+  left : 0%;
+}
+
+.stats-view .right-col{
+  right : 0%;
+}
+
+.main-container.stats-view .progress-bar{
+  position : absolute;
+  left : 12%;
+  height : 100%;
+  width : 76%;
+  border : 10px solid black;
+}
+
+.main-container.stats-view .progress-bar .neg-resp-bar{
+  position : absolute;
+  height : 100%;
+  border-left: solid 5px black;
+  width : 50%;
+  right : 0;
+  background-color : #99F;
+}
+ 
+
+.main-container.stats-view .progress-bar .pos-resp-bar{
+  position : absolute;
+  left : 0;
+  height : 100%;
+  border-right : solid 5px black;
+  width : 50%;
+  background-color : #F99;
+}
+.stats-view .left-col{
+  float : left;
+}
+
+.stats-view .right-col{
+  float : right;
+}
+
+/*---- USER VIEW ----- */
+
+.form-div{
+  width : 100%;
+}
+
+.form-div .field{
+  width : 35%;
+  float : left;
+  text-algin : right;
+}
+
+.main-container .form-div .entry{
+  width : 35%;
+  color : black;
+}
+
+.main-container .form-div .entry input{
+  color : black;
+}
