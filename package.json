@@ -7,4 +7,9 @@
         "body-parser" : "~1.4.2",
         "method-override" : "~2.0.2"        
       }
+    "scripts": 
+    {
+        "start": "node server.js",
+        "postinstall": "bower install && gulp build-libs && gulp build"
     }
+}
