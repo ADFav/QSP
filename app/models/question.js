@@ -8,6 +8,7 @@ var Schema = mongoose.Schema;
 
 var questionSchema = new Schema({
   _id  : {type : Number, required : true},
+  asker: {type : Number, required : true},
   text : {type : String, required : true},
   tags : [String],
   responses : [String]

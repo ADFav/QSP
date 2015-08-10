@@ -1,224 +1,282 @@
-/*style.css*/
-h1, h2, h3, h4, h5, h6{
+html, body, .container, .container-fluid{
+  height : 100%;
+  padding: 0;
+  margin-top : 0;
+  margin-bottom : 0;
+}
+
+.jumbotron{
+  height : 30%;
   margin : 0;
 }
 
-body{
-  height : 0px;
+navbar, navbar * {
+  margin : 0;
 }
 
-.main-container{
-  position : absolute;
-  background-color : #666;
-  width : 100%;
-  height : 100%;
-  padding : 0px;
-  margin : 0px;
-  height : 100%;
+.container-fluid .jumbotron, nav.navbar.navbar-inverse{
+  padding : 0 0 0 0;
   width : 100%;
 }
 
-.main-container *{
-  position : relative;
-  display : inline-block;
-  box-sizing : border-box;
+ul.nav{
+  width : 100%;  
+}
+
+ul.nav>li{
+  float : left;
+  width : 17%;
+  font-size : 24px;
   color : white;
-}
-
-.main-container header{
-  margin : 0%;
-  width: 100%;
-  height : 9%;
-  background-color: #CCC;
-  color : black;
-}
-
-header #logo{
-  position : absolute;
-  left : 50%;
-  top : 50%;
-  transform : translate(-50%,-50%);
-  font-size : 36pt;
-  color : black;
-}
-
-#menu-icon{
-  position: absolute;
-  right : 5%;
-}
-
-#question-box{
-  height : 60%;
-  width : 100%;
-}
-
-.box{
-  border-width : 25px;
-  border-style: solid;
-}
-
-.grey{
-  background-color : #999;
-  border-color : #777;
-}
-
-.blue{
-  background-color : #99F;
-  border-color : #77F;
-}
-
-.red{
-  background-color : #F99;
-  border-color : #F77;
-}
-
-.answer{
-  width : 49.5%;
-  height : 29%;
-  margin-bottom :  0%;
-  position : absolute;
-  bottom : 0px;
-}
-
-.answer.box.left{
-  left : 0px;
-  border-radius : 20% 0% 0% 20%;
-}
-
-.answer.box.right{
-  right : 0px;
-  border-radius : 0% 20% 20% 0%;
-}
-
-.box span{
-  font-size : 24pt;
-  color : white;
-  position : absolute;
-  top : 50%;
-  left : 50%;
-  transform : translate(-50%,-50%);
-}
-
-/* ------- STATS VIEW -----*/
-
-/*for design purposes only*/
-/* .stats-view *{
-  border : solid 3px red;
-  background-color : rgba(0,255,0,0.25);
-} */
-/*end preview settings*/
-
-.main-container.stats-view{
-  background-color : #555;
-}
-
-.main-container.stats-view *{
-  position : relative;
   box-sizing : border-box;
-}
-
-.stats-view #question{
-  width : 100%;
-  height : 17%;
-  margin-top : 5%;  
+  border-width : 10px;
+  border-style : solid;
+  border-color : transparent #FFF #FFF transparent;
+  margin-right : 3%;
+  transition : .25s;
   text-align : center;
 }
 
-.stats-view #pos-resp-text, .stats-view #neg-resp-text{
-  position : absolute;
-  top : 0;
-  width : 15%;
+ul.nav>li:last-child{
+  margin-right : 0;
+}
+
+ul.nav>li:hover{
+  background-color : #CCC;
+  border-color : transparent #AAA #AAA transparent;
+  color : #AAA;  
+}
+
+ul.nav>li:active, ul.nav>li.active{
+  background-color : white;
+  border-color : transparent black black transparent;
+  color : black;  
+}
+
+.testView{
+  height : 70%;
+  width : 100%;
+  position : relative;
+}
+
+.testView > div{
   height : 100%;
+  padding : 2%;
+}
+/*---- LOGIN VIEW ----- */
+#login-div input, #addUser-div input, #addUser-div select, #login-div select{
+  width : 100%;
+  font-size : 36px;
 }
 
-.stats-view #pos-resp-text{
-  left :0;
+#login-div button, #addUser-div button{
+  text-align : center;
 }
 
-.stats-view #neg-resp-text{
-  right :0;
+#login-div .errMsg, #addUser-div .errmsg{
+  color : red;
 }
 
-.stats-view #question-text{
-  position : absolute;
-  left : 20%;
-  top : 0%;
-  width : 60%;
-  margin : 0;
+#addUser-div, #login-div{
+  border-style : solid;
+  border-width : 25px;
+  overflow : scroll;
+}
+
+#addUser-div{
+  background-color : #777;
+  border-color : transparent #555 #555 transparent;
+}
+
+#login-div{
+  background-color : #BBB;
+  border-color : transparent #999 #999 transparent;
+}
+
+/*---- QUESTION VIEW ----- */
+
+#home-div .row{
+  display : table;
+}
+
+#home-div .row > div{
+  display : table-cell;
+  vertical-align : middle;
+  float : none;
+}
+
+#home-div .questionBox{
+  height : 70%;
+  background-color : #999;
+  border-color : transparent #777 #777 transparent;
+  border-width : 25px;
+  border-style : solid;
+}
+
+#home-div .answerRow{
+  height : 30%;
+}
+
+#home-div .answerRow div{
+  box-sizing : border-box;
+  border-width : 25px;
+  border-style : solid;
   height : 100%;
+  transition : background-color 1s, border 1s;
 }
 
-.stats-view #total{
-  margin-top : 5%;
-  height : 10%;
+#home-div .answerRow div:first-child{
+  background-color : #F99;
+  border-color     : transparent #F77 #F77 transparent;
+}
+
+#home-div .answerRow div:first-child:active{
+  background-color : #F77;
+  border-color     : transparent #F55 #F55 transparent;
+}
+
+#home-div .answerRow div:last-child{
+  background-color : #99F;
+  border-color     : transparent #77F #77F transparent;
+}
+
+#home-div .answerRow div:last-child:active{
+  background-color : #77F;
+  border-color     : transparent #55F #55F transparent;
+}
+
+/*---- ADDQUESTION VIEW ----- */
+#addQuestion-div{
+  background-color : #AAA;
+  border-color  : transparent #888 #888 transparent;
+  border-width : 25px;
+  border-style  : solid;
+  overflow : scroll;
+}
+
+#addQuestion-div #questionText{
+  border-color  : transparent black black transparent;
+  border-width : 25px;
+  border-style  : solid;
+  overflow : scroll;
+}
+
+#addQuestion-div input, #addQuestion-div textarea{
+  font-size : 36px;
   width : 100%;
 }
 
-.stats-view .left-col, .stats-view .right-col{
-  position : absolute;
-  width : 10%;
+#addQuestion-div input[type="checkbox"] + label{
+  width : 100%;
   height : 100%;
 }
 
-.stats-view .left-col{
-  left : 0%;
-}
-
-.stats-view .right-col{
-  right : 0%;
-}
-
-.main-container.stats-view .progress-bar{
-  position : absolute;
-  left : 12%;
+#addQuestion-div input[type="checkbox"] + label>div{
+  width : 100%;
   height : 100%;
-  width : 76%;
-  border : 10px solid black;
+  color : #2E0854;
+  font-size : 30px;
+  border : #72587F 10px solid;
+  border-color : transparent #72587F #72587F transparent;
 }
 
-.main-container.stats-view .progress-bar .neg-resp-bar{
-  position : absolute;
-  height : 100%;
-  border-left: solid 5px black;
-  width : 50%;
-  right : 0;
-  background-color : #99F;
+#addQuestion-div input[type="checkbox"]:checked + label>div{
+  background-color : #72587F;
+  border-width : 10px;
+  border-style : solid;
+  border-color : transparent #2E0854 #2E0854 transparent;
+  color : white;
+  box-styling : border-box;
 }
- 
 
-.main-container.stats-view .progress-bar .pos-resp-bar{
+#addQuestion-div input[type="checkbox"]{
+  display : none;
+}
+
+#addQuestion-div #customTag{
+  border-width : 10px;
+  border-style : solid;
+  border-color : transparent #72587F #72587F transparent;
+}
+
+#addQuestion-div #Response1{
+  border-width : 10px;
+  border-style : solid;
+  border-color : transparent #F77 #F77 transparent;
+}
+
+#addQuestion-div #Response2{
+  border-width : 10px;
+  border-style : solid;
+  border-color : transparent #77F #77F transparent;
+}
+
+/*---- STATS VIEW ----- */
+#stats-div{
+  background-color : #CCC;
+  border-color : transparent #AAA #AAA transparent;
+  border-width : 25px;
+  border-style : solid;
+  position : relative;
+  overflow : scroll;
+}
+
+#stats-div .row-with-top-border{
+  border-top : solid 10px black;
+  margin-top : 25px;
+}
+
+#stats-div .progress-bar{
+  box-sizing : border-box;
+  border-width : 10px;
+  border-style : solid;
+  border-color : transparent black black transparent;
+  width : 100%;
+  height : 75px;
+  background-color : transparent;
+  position : relative;
+}
+
+#stats-div .progress-bar .pos-resp-bar{
+  box-sizing : border-box;
+  background-color : #F77;
+  border-right : 2px solid black;
   position : absolute;
   left : 0;
   height : 100%;
-  border-right : solid 5px black;
-  width : 50%;
-  background-color : #F99;
-}
-.stats-view .left-col{
-  float : left;
 }
 
-.stats-view .right-col{
-  float : right;
+#stats-div .progress-bar .neg-resp-bar{
+  box-sizing : border-box;
+  background-color : #77F;
+  border-left : 2px solid black;
+  position : absolute;
+  right : 0;
+  height : 100%;
 }
 
-/*---- USER VIEW ----- */
-
-.form-div{
-  width : 100%;
+/*---- ASKEDQUESTIONS VIEW ----- */
+#asked-questions-div{
+  box-sizing : border-box;
+  border-color : transparent #666 #666 transparent;
+  border-width : 25px;
+  border-style : solid;
+  background-color : #888;
+  overflow : scroll;
 }
 
-.form-div .field{
-  width : 35%;
-  float : left;
-  text-algin : right;
+#asked-questions-div .row:nth-child(even){
+  background-color : #888;
 }
 
-.main-container .form-div .entry{
-  width : 35%;
-  color : black;
+#asked-questions-div .row:nth-child(odd){
+  background-color : #777;
 }
 
-.main-container .form-div .entry input{
-  color : black;
+#asked-questions-div .stats-button{
+  border-color : transparent #228b22 #228b22 transparent;
+  border-width : 10px;
+  border-style : solid;
+  background-color : #1b6f1b;
+  color : white;
 }

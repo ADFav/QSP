@@ -1,59 +1,36 @@
-<!doctype HTML>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <base href="/">
+ <div id ="stats-div">
+   <div class = "row">
+     <div class = "col-xs-2"></div>     
+     <div class = "col-xs-2 text-center">
+       <h2>{{response_1}}</h2>
+     </div>
+     <div class = "col-xs-6 text-center">
+       <h1>{{question}}</h1>   
+     </div>
+     <div class = "col-xs-2 text-center">
+       <h2>{{response_2}}</h2>
+     </div>
+   </div>
+   
+   <div ng-repeat="(field,valueList) in fieldWidths">
+     <div class = "row row-with-top-border">
+       <div class = "col-xs-4"></div>     
+       <div class = "col-xs-6 text-center"><h1>{{field}}</h1></div>   
+       <div class = "col-xs-2"></div>     
+     </div>
 
-    <title>Quick Stupid Poll</title>
-
-    <!-- CSS -->
-
-    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type = "text/css" href="./css/style.css"> <!-- custom styles -->
-
-    <!-- JS -->
-    <script src="libs/angular/angular.js"></script>
-    <script src="libs/angular-route/angular-route.js"></script>
-
-    <!--ANGULAR CUSTOM -->
-    <script src="js/appRoutes.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/controllers/MainCtrl.js"></script>
-    <script src="js/controllers/StatsCtrl.js"></script>
-  </head>
-  <body ng-app="sampleApp" ng-controller="StatsController">
-    <div class="main-container stats-view">
-      <header>
-        <div id="logo">QSP</div>
-        <div id="menu-icon">M</div>
-      </header>
-      
-      <div id ="question">
-        <div id="pos-resp-text">
-          <span><h2>{{response_1}}</h2></span>
-        </div>
-        <div id = "question-text">
-          <h1>{{question}}</h1>
-        </div>
-        <div id = "neg-resp-text">
-          <h2>{{response_2}}</h2>
-        </div>
-      </div>
-      
-      <div id = "total">
-        <div class="left-col">
-          <h3>{{totalPositive}}%</h3>
-        </div>
-        <div class="progress-bar">
-          <div class="pos-resp-bar" ng-style="{width : width_pos}"></div>
-          <div class="neg-resp-bar" ng-style="{width : width_neg}"></div>
-        </div>
-        <div class ="right-col">
-          <h3>{{totalNegative}}%</h3>
-        </div>
-          
-  </body>
-</html>
-  
-  
+     <div ng-repeat="(valueTitle,value) in valueList">
+       <div class = "row">    
+         <div class = "col-xs-2 text-right"><h2>{{valueTitle}}</h2></div>     
+         <div class = "col-xs-2"><h3>{{fieldValues[field][valueTitle][0]}}</h3></div>
+         <div class = "col-xs-6">
+           <div class="progress-bar">
+             <div class="pos-resp-bar" ng-style="{width : fieldValues[field][valueTitle][0]}"></div>             
+             <div class="neg-resp-bar" ng-style="{width : fieldValues[field][valueTitle][1]}"></div>   
+           </div>
+         </div>
+         <div class = "col-xs-2"><h3>{{fieldValues[field][valueTitle][1]}}</h3></div>
+       </div>
+     </div>
+   </div>
+</div>            

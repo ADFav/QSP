@@ -19,7 +19,6 @@ var port = process.env.port || 3000;
  mongoose.connect(db.url); 
 var database = mongoose.connection;
 database.once('open',function(){
-  console.log("connected!");
 });
 
 // get all data/stuff of the body (POST) parameters
@@ -44,9 +43,6 @@ require('./app/routes')(app); // configure our routes
 // start app ===============================================
 // startup our app at http://localhost:8080
 app.listen(port);
-
-// shoutout to the user                     
-console.log('Magic happens on port ' + port);
 
 // expose app           
 exports = module.exports = app;   
