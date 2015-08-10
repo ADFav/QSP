@@ -10,6 +10,6 @@
     "scripts": 
     {
         "start": "node server.js"
-        "postinstall": "bower install && gulp build-libs && gulp build"
+        "postinstall": "bower install"
     }
 }
