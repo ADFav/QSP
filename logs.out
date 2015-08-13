@@ -1,42 +1,3 @@
-2015-08-13T05:30:42.175423+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
-2015-08-13T05:30:42.175665+00:00 app[web.1]: npm ERR! node v0.12.7
-2015-08-13T05:30:42.176422+00:00 app[web.1]: npm ERR! npm  v2.11.3
-2015-08-13T05:30:42.176636+00:00 app[web.1]: npm ERR! code ELIFECYCLE
-2015-08-13T05:30:42.176807+00:00 app[web.1]: npm ERR! starter-node-angular@ start: `node server.js`
-2015-08-13T05:30:42.176960+00:00 app[web.1]: npm ERR! Exit status 1
-2015-08-13T05:30:42.177147+00:00 app[web.1]: npm ERR! 
-2015-08-13T05:30:42.177297+00:00 app[web.1]: npm ERR! Failed at the starter-node-angular@ start script 'node server.js'.
-2015-08-13T05:30:42.177454+00:00 app[web.1]: npm ERR! This is most likely a problem with the starter-node-angular package,
-2015-08-13T05:30:42.177586+00:00 app[web.1]: npm ERR! not with npm itself.
-2015-08-13T05:30:42.174883+00:00 app[web.1]: npm ERR! Linux 3.13.0-57-generic
-2015-08-13T05:30:42.177750+00:00 app[web.1]: npm ERR! Tell the author that this fails on your system:
-2015-08-13T05:30:42.177892+00:00 app[web.1]: npm ERR!     node server.js
-2015-08-13T05:30:42.181488+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
-2015-08-13T05:30:42.178016+00:00 app[web.1]: npm ERR! You can get their info via:
-2015-08-13T05:30:42.181675+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
-2015-08-13T05:30:42.178157+00:00 app[web.1]: npm ERR!     npm owner ls starter-node-angular
-2015-08-13T05:30:42.178317+00:00 app[web.1]: npm ERR! There is likely additional logging output above.
-2015-08-13T05:30:42.181106+00:00 app[web.1]: 
-2015-08-13T05:30:43.061225+00:00 heroku[web.1]: State changed from starting to crashed
-2015-08-13T05:30:43.052403+00:00 heroku[web.1]: Process exited with status 1
-2015-08-13T11:22:54.826968+00:00 heroku[web.1]: State changed from crashed to starting
-2015-08-13T11:23:00.250716+00:00 heroku[web.1]: Starting process with command `npm start`
-2015-08-13T11:23:02.632654+00:00 app[web.1]: 
-2015-08-13T11:23:02.632685+00:00 app[web.1]: > starter-node-angular@ start /app
-2015-08-13T11:23:02.632687+00:00 app[web.1]: > node server.js
-2015-08-13T11:23:02.632688+00:00 app[web.1]: 
-2015-08-13T11:23:03.292951+00:00 app[web.1]: /app/server.js:28
-2015-08-13T11:23:03.292956+00:00 app[web.1]: app.use(bodyparser.json({limit:'50mb'}));
-2015-08-13T11:23:03.292959+00:00 app[web.1]:         ^
-2015-08-13T11:23:03.292960+00:00 app[web.1]: ReferenceError: bodyparser is not defined
-2015-08-13T11:23:03.292961+00:00 app[web.1]:     at Object.<anonymous> (/app/server.js:28:9)
-2015-08-13T11:23:03.292963+00:00 app[web.1]:     at Module._compile (module.js:460:26)
-2015-08-13T11:23:03.292968+00:00 app[web.1]:     at Function.Module.runMain (module.js:501:10)
-2015-08-13T11:23:03.292970+00:00 app[web.1]:     at startup (node.js:129:16)
-2015-08-13T11:23:03.292964+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:478:10)
-2015-08-13T11:23:03.292966+00:00 app[web.1]:     at Module.load (module.js:355:32)
-2015-08-13T11:23:03.312875+00:00 app[web.1]: 
-2015-08-13T11:23:03.292967+00:00 app[web.1]:     at Function.Module._load (module.js:310:12)
 2015-08-13T11:23:03.319988+00:00 app[web.1]: npm ERR! starter-node-angular@ start: `node server.js`
 2015-08-13T11:23:03.318724+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
 2015-08-13T11:23:03.319500+00:00 app[web.1]: npm ERR! npm  v2.11.3
@@ -99,3 +60,42 @@
 2015-08-13T17:07:23.488241+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
 2015-08-13T17:07:24.413128+00:00 heroku[web.1]: State changed from starting to crashed
 2015-08-13T17:07:24.395286+00:00 heroku[web.1]: Process exited with status 1
+2015-08-13T22:02:33.855479+00:00 heroku[api]: Release v8 created by andrew.favaloro@gmail.com
+2015-08-13T22:02:33.855479+00:00 heroku[api]: Deploy d30c237 by andrew.favaloro@gmail.com
+2015-08-13T22:02:33.900842+00:00 heroku[slug-compiler]: Slug compilation started
+2015-08-13T22:02:33.900865+00:00 heroku[slug-compiler]: Slug compilation finished
+2015-08-13T22:02:34.469328+00:00 heroku[web.1]: State changed from crashed to starting
+2015-08-13T22:02:39.440705+00:00 heroku[web.1]: Starting process with command `npm start`
+2015-08-13T22:02:42.194871+00:00 app[web.1]: > starter-node-angular@ start /app
+2015-08-13T22:02:42.194874+00:00 app[web.1]: > node server.js
+2015-08-13T22:02:42.194875+00:00 app[web.1]: 
+2015-08-13T22:02:42.194848+00:00 app[web.1]: 
+2015-08-13T22:02:52.460175+00:00 heroku[slug-compiler]: Slug compilation started
+2015-08-13T22:02:52.460197+00:00 heroku[slug-compiler]: Slug compilation finished
+2015-08-13T22:02:52.408543+00:00 heroku[api]: Deploy d30c237 by andrew.favaloro@gmail.com
+2015-08-13T22:02:52.408543+00:00 heroku[api]: Release v9 created by andrew.favaloro@gmail.com
+2015-08-13T22:02:57.248686+00:00 heroku[web.1]: Starting process with command `npm start`
+2015-08-13T22:02:59.272021+00:00 app[web.1]: 
+2015-08-13T22:02:59.272045+00:00 app[web.1]: > starter-node-angular@ start /app
+2015-08-13T22:02:59.272048+00:00 app[web.1]: > node server.js
+2015-08-13T22:02:59.272049+00:00 app[web.1]: 
+2015-08-13T22:03:39.540305+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
+2015-08-13T22:03:39.540305+00:00 heroku[web.1]: Stopping process with SIGKILL
+2015-08-13T22:03:40.528126+00:00 heroku[web.1]: Process exited with status 137
+2015-08-13T22:03:57.537634+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
+2015-08-13T22:03:57.537790+00:00 heroku[web.1]: Stopping process with SIGKILL
+2015-08-13T22:03:58.476288+00:00 heroku[web.1]: State changed from starting to crashed
+2015-08-13T22:03:58.477614+00:00 heroku[web.1]: State changed from crashed to starting
+2015-08-13T22:03:58.454692+00:00 heroku[web.1]: Process exited with status 137
+2015-08-13T22:03:58.935127+00:00 heroku[router]: at=error code=H20 desc="App boot timeout" method=GET path="/" host=quickstupidpoll.herokuapp.com request_id=0d38f2c9-3853-4d4a-8a43-a13fb254c119 fwd="24.186.243.78" dyno= connect= service= status=503 bytes=
+2015-08-13T22:04:05.829077+00:00 heroku[web.1]: Starting process with command `npm start`
+2015-08-13T22:04:08.250824+00:00 app[web.1]: > starter-node-angular@ start /app
+2015-08-13T22:04:08.250826+00:00 app[web.1]: > node server.js
+2015-08-13T22:04:08.250803+00:00 app[web.1]: 
+2015-08-13T22:04:08.250827+00:00 app[web.1]: 
+2015-08-13T22:05:06.363453+00:00 heroku[web.1]: Stopping process with SIGKILL
+2015-08-13T22:05:06.363282+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
+2015-08-13T22:05:07.242644+00:00 heroku[web.1]: Process exited with status 137
+2015-08-13T22:05:07.255467+00:00 heroku[web.1]: State changed from starting to crashed
+2015-08-13T22:06:10.471856+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=quickstupidpoll.herokuapp.com request_id=06988ead-2c2b-41db-b0e5-9546ffbf4856 fwd="24.186.243.78" dyno= connect= service= status=503 bytes=
+2015-08-13T22:06:10.678236+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=quickstupidpoll.herokuapp.com request_id=c6020b43-f92e-4305-a41d-f2607c7a79de fwd="24.186.243.78" dyno= connect= service= status=503 bytes=
