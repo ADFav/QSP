@@ -1,0 +1,101 @@
+2015-08-13T05:30:42.175423+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2015-08-13T05:30:42.175665+00:00 app[web.1]: npm ERR! node v0.12.7
+2015-08-13T05:30:42.176422+00:00 app[web.1]: npm ERR! npm  v2.11.3
+2015-08-13T05:30:42.176636+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2015-08-13T05:30:42.176807+00:00 app[web.1]: npm ERR! starter-node-angular@ start: `node server.js`
+2015-08-13T05:30:42.176960+00:00 app[web.1]: npm ERR! Exit status 1
+2015-08-13T05:30:42.177147+00:00 app[web.1]: npm ERR! 
+2015-08-13T05:30:42.177297+00:00 app[web.1]: npm ERR! Failed at the starter-node-angular@ start script 'node server.js'.
+2015-08-13T05:30:42.177454+00:00 app[web.1]: npm ERR! This is most likely a problem with the starter-node-angular package,
+2015-08-13T05:30:42.177586+00:00 app[web.1]: npm ERR! not with npm itself.
+2015-08-13T05:30:42.174883+00:00 app[web.1]: npm ERR! Linux 3.13.0-57-generic
+2015-08-13T05:30:42.177750+00:00 app[web.1]: npm ERR! Tell the author that this fails on your system:
+2015-08-13T05:30:42.177892+00:00 app[web.1]: npm ERR!     node server.js
+2015-08-13T05:30:42.181488+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2015-08-13T05:30:42.178016+00:00 app[web.1]: npm ERR! You can get their info via:
+2015-08-13T05:30:42.181675+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2015-08-13T05:30:42.178157+00:00 app[web.1]: npm ERR!     npm owner ls starter-node-angular
+2015-08-13T05:30:42.178317+00:00 app[web.1]: npm ERR! There is likely additional logging output above.
+2015-08-13T05:30:42.181106+00:00 app[web.1]: 
+2015-08-13T05:30:43.061225+00:00 heroku[web.1]: State changed from starting to crashed
+2015-08-13T05:30:43.052403+00:00 heroku[web.1]: Process exited with status 1
+2015-08-13T11:22:54.826968+00:00 heroku[web.1]: State changed from crashed to starting
+2015-08-13T11:23:00.250716+00:00 heroku[web.1]: Starting process with command `npm start`
+2015-08-13T11:23:02.632654+00:00 app[web.1]: 
+2015-08-13T11:23:02.632685+00:00 app[web.1]: > starter-node-angular@ start /app
+2015-08-13T11:23:02.632687+00:00 app[web.1]: > node server.js
+2015-08-13T11:23:02.632688+00:00 app[web.1]: 
+2015-08-13T11:23:03.292951+00:00 app[web.1]: /app/server.js:28
+2015-08-13T11:23:03.292956+00:00 app[web.1]: app.use(bodyparser.json({limit:'50mb'}));
+2015-08-13T11:23:03.292959+00:00 app[web.1]:         ^
+2015-08-13T11:23:03.292960+00:00 app[web.1]: ReferenceError: bodyparser is not defined
+2015-08-13T11:23:03.292961+00:00 app[web.1]:     at Object.<anonymous> (/app/server.js:28:9)
+2015-08-13T11:23:03.292963+00:00 app[web.1]:     at Module._compile (module.js:460:26)
+2015-08-13T11:23:03.292968+00:00 app[web.1]:     at Function.Module.runMain (module.js:501:10)
+2015-08-13T11:23:03.292970+00:00 app[web.1]:     at startup (node.js:129:16)
+2015-08-13T11:23:03.292964+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:478:10)
+2015-08-13T11:23:03.292966+00:00 app[web.1]:     at Module.load (module.js:355:32)
+2015-08-13T11:23:03.312875+00:00 app[web.1]: 
+2015-08-13T11:23:03.292967+00:00 app[web.1]:     at Function.Module._load (module.js:310:12)
+2015-08-13T11:23:03.319988+00:00 app[web.1]: npm ERR! starter-node-angular@ start: `node server.js`
+2015-08-13T11:23:03.318724+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2015-08-13T11:23:03.319500+00:00 app[web.1]: npm ERR! npm  v2.11.3
+2015-08-13T11:23:03.318979+00:00 app[web.1]: npm ERR! node v0.12.7
+2015-08-13T11:23:03.320655+00:00 app[web.1]: npm ERR! This is most likely a problem with the starter-node-angular package,
+2015-08-13T11:23:03.292971+00:00 app[web.1]:     at node.js:814:3
+2015-08-13T11:23:03.319809+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2015-08-13T11:23:03.321127+00:00 app[web.1]: npm ERR!     node server.js
+2015-08-13T11:23:03.320150+00:00 app[web.1]: npm ERR! Exit status 1
+2015-08-13T11:23:03.320308+00:00 app[web.1]: npm ERR! 
+2015-08-13T11:23:03.321444+00:00 app[web.1]: npm ERR!     npm owner ls starter-node-angular
+2015-08-13T11:23:03.320477+00:00 app[web.1]: npm ERR! Failed at the starter-node-angular@ start script 'node server.js'.
+2015-08-13T11:23:03.320789+00:00 app[web.1]: npm ERR! not with npm itself.
+2015-08-13T11:23:03.320935+00:00 app[web.1]: npm ERR! Tell the author that this fails on your system:
+2015-08-13T11:23:03.321636+00:00 app[web.1]: npm ERR! There is likely additional logging output above.
+2015-08-13T11:23:03.321307+00:00 app[web.1]: npm ERR! You can get their info via:
+2015-08-13T11:23:03.324409+00:00 app[web.1]: 
+2015-08-13T11:23:03.318114+00:00 app[web.1]: npm ERR! Linux 3.13.0-57-generic
+2015-08-13T11:23:03.324860+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2015-08-13T11:23:03.325089+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2015-08-13T11:23:04.072872+00:00 heroku[web.1]: Process exited with status 1
+2015-08-13T11:23:04.078308+00:00 heroku[web.1]: State changed from starting to crashed
+2015-08-13T17:07:14.788409+00:00 heroku[web.1]: State changed from crashed to starting
+2015-08-13T17:07:20.369273+00:00 heroku[web.1]: Starting process with command `npm start`
+2015-08-13T17:07:22.716134+00:00 app[web.1]: 
+2015-08-13T17:07:22.716159+00:00 app[web.1]: > starter-node-angular@ start /app
+2015-08-13T17:07:22.716161+00:00 app[web.1]: > node server.js
+2015-08-13T17:07:22.716162+00:00 app[web.1]: 
+2015-08-13T17:07:23.437624+00:00 app[web.1]: /app/server.js:28
+2015-08-13T17:07:23.437637+00:00 app[web.1]:         ^
+2015-08-13T17:07:23.437634+00:00 app[web.1]: app.use(bodyparser.json({limit:'50mb'}));
+2015-08-13T17:07:23.437639+00:00 app[web.1]: ReferenceError: bodyparser is not defined
+2015-08-13T17:07:23.437641+00:00 app[web.1]:     at Object.<anonymous> (/app/server.js:28:9)
+2015-08-13T17:07:23.437643+00:00 app[web.1]:     at Module._compile (module.js:460:26)
+2015-08-13T17:07:23.437655+00:00 app[web.1]:     at node.js:814:3
+2015-08-13T17:07:23.437653+00:00 app[web.1]:     at startup (node.js:129:16)
+2015-08-13T17:07:23.437645+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:478:10)
+2015-08-13T17:07:23.437651+00:00 app[web.1]:     at Function.Module.runMain (module.js:501:10)
+2015-08-13T17:07:23.437649+00:00 app[web.1]:     at Function.Module._load (module.js:310:12)
+2015-08-13T17:07:23.466203+00:00 app[web.1]: 
+2015-08-13T17:07:23.437647+00:00 app[web.1]:     at Module.load (module.js:355:32)
+2015-08-13T17:07:23.487498+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2015-08-13T17:07:23.478618+00:00 app[web.1]: npm ERR! Exit status 1
+2015-08-13T17:07:23.478887+00:00 app[web.1]: npm ERR! 
+2015-08-13T17:07:23.475054+00:00 app[web.1]: npm ERR! Linux 3.13.0-57-generic
+2015-08-13T17:07:23.475864+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2015-08-13T17:07:23.476249+00:00 app[web.1]: npm ERR! node v0.12.7
+2015-08-13T17:07:23.478298+00:00 app[web.1]: npm ERR! starter-node-angular@ start: `node server.js`
+2015-08-13T17:07:23.477594+00:00 app[web.1]: npm ERR! npm  v2.11.3
+2015-08-13T17:07:23.477983+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2015-08-13T17:07:23.480525+00:00 app[web.1]: npm ERR! Tell the author that this fails on your system:
+2015-08-13T17:07:23.479918+00:00 app[web.1]: npm ERR! This is most likely a problem with the starter-node-angular package,
+2015-08-13T17:07:23.481041+00:00 app[web.1]: npm ERR! You can get their info via:
+2015-08-13T17:07:23.481643+00:00 app[web.1]: npm ERR! There is likely additional logging output above.
+2015-08-13T17:07:23.480295+00:00 app[web.1]: npm ERR! not with npm itself.
+2015-08-13T17:07:23.479587+00:00 app[web.1]: npm ERR! Failed at the starter-node-angular@ start script 'node server.js'.
+2015-08-13T17:07:23.486842+00:00 app[web.1]: 
+2015-08-13T17:07:23.480775+00:00 app[web.1]: npm ERR!     node server.js
+2015-08-13T17:07:23.481409+00:00 app[web.1]: npm ERR!     npm owner ls starter-node-angular
+2015-08-13T17:07:23.488241+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2015-08-13T17:07:24.413128+00:00 heroku[web.1]: State changed from starting to crashed
+2015-08-13T17:07:24.395286+00:00 heroku[web.1]: Process exited with status 1

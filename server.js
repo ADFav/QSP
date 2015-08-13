@@ -25,8 +25,7 @@ var database = mongoose.connection;
 app.use(bodyParser.json()); 
 
 // parse application/vnd.api+json as json
-app.use(bodyparser.json({limit:'50mb'}));
-app.use(bodyparser.urlencoded({limit: '50mb', extended: true}));
+app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
 
 // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
 app.use(methodOverride('X-HTTP-Method-Override')); 
