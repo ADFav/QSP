@@ -1,20 +1,3 @@
-2015-08-13T11:23:03.319988+00:00 app[web.1]: npm ERR! starter-node-angular@ start: `node server.js`
-2015-08-13T11:23:03.318724+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
-2015-08-13T11:23:03.319500+00:00 app[web.1]: npm ERR! npm  v2.11.3
-2015-08-13T11:23:03.318979+00:00 app[web.1]: npm ERR! node v0.12.7
-2015-08-13T11:23:03.320655+00:00 app[web.1]: npm ERR! This is most likely a problem with the starter-node-angular package,
-2015-08-13T11:23:03.292971+00:00 app[web.1]:     at node.js:814:3
-2015-08-13T11:23:03.319809+00:00 app[web.1]: npm ERR! code ELIFECYCLE
-2015-08-13T11:23:03.321127+00:00 app[web.1]: npm ERR!     node server.js
-2015-08-13T11:23:03.320150+00:00 app[web.1]: npm ERR! Exit status 1
-2015-08-13T11:23:03.320308+00:00 app[web.1]: npm ERR! 
-2015-08-13T11:23:03.321444+00:00 app[web.1]: npm ERR!     npm owner ls starter-node-angular
-2015-08-13T11:23:03.320477+00:00 app[web.1]: npm ERR! Failed at the starter-node-angular@ start script 'node server.js'.
-2015-08-13T11:23:03.320789+00:00 app[web.1]: npm ERR! not with npm itself.
-2015-08-13T11:23:03.320935+00:00 app[web.1]: npm ERR! Tell the author that this fails on your system:
-2015-08-13T11:23:03.321636+00:00 app[web.1]: npm ERR! There is likely additional logging output above.
-2015-08-13T11:23:03.321307+00:00 app[web.1]: npm ERR! You can get their info via:
-2015-08-13T11:23:03.324409+00:00 app[web.1]: 
 2015-08-13T11:23:03.318114+00:00 app[web.1]: npm ERR! Linux 3.13.0-57-generic
 2015-08-13T11:23:03.324860+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
 2015-08-13T11:23:03.325089+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
@@ -99,3 +82,20 @@
 2015-08-13T22:05:07.255467+00:00 heroku[web.1]: State changed from starting to crashed
 2015-08-13T22:06:10.471856+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=quickstupidpoll.herokuapp.com request_id=06988ead-2c2b-41db-b0e5-9546ffbf4856 fwd="24.186.243.78" dyno= connect= service= status=503 bytes=
 2015-08-13T22:06:10.678236+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=quickstupidpoll.herokuapp.com request_id=c6020b43-f92e-4305-a41d-f2607c7a79de fwd="24.186.243.78" dyno= connect= service= status=503 bytes=
+2015-08-13T22:09:47.824857+00:00 heroku[api]: Deploy 13f30c2 by andrew.favaloro@gmail.com
+2015-08-13T22:09:47.824857+00:00 heroku[api]: Release v10 created by andrew.favaloro@gmail.com
+2015-08-13T22:09:47.870698+00:00 heroku[slug-compiler]: Slug compilation finished
+2015-08-13T22:09:47.870690+00:00 heroku[slug-compiler]: Slug compilation started
+2015-08-13T22:09:47.963390+00:00 heroku[web.1]: State changed from crashed to starting
+2015-08-13T22:09:53.936780+00:00 heroku[web.1]: Starting process with command `npm start`
+2015-08-13T22:09:56.092800+00:00 app[web.1]: 
+2015-08-13T22:09:56.092821+00:00 app[web.1]: > starter-node-angular@ start /app
+2015-08-13T22:09:56.092824+00:00 app[web.1]: > node server.js
+2015-08-13T22:09:56.092825+00:00 app[web.1]: 
+2015-08-13T22:10:54.356763+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
+2015-08-13T22:10:54.356763+00:00 heroku[web.1]: Stopping process with SIGKILL
+2015-08-13T22:10:55.206545+00:00 heroku[web.1]: Process exited with status 137
+2015-08-13T22:10:55.214752+00:00 heroku[web.1]: State changed from starting to crashed
+2015-08-13T22:10:56.147441+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=quickstupidpoll.herokuapp.com request_id=871f4e56-523a-4050-8495-89fa7ac60a86 fwd="24.186.243.78" dyno= connect= service= status=503 bytes=
+2015-08-13T22:10:56.205195+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=quickstupidpoll.herokuapp.com request_id=6191bf30-91c9-4355-bcc5-ada1325862cb fwd="24.186.243.78" dyno= connect= service= status=503 bytes=
+2015-08-13T22:10:56.320963+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=quickstupidpoll.herokuapp.com request_id=9055cbb4-2c77-4904-adfe-082776a32d53 fwd="24.186.243.78" dyno= connect= service= status=503 bytes=
