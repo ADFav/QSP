@@ -63,8 +63,8 @@ angular.module('StatsCtrl', []).controller('StatsController', function($scope,$r
   var convertToPercentages = function(obj){
     var pos = obj.positive, neg  = obj.negative;
     return result = {description : obj.description, 
-                     positive : "" + ((pos+neg) > 0 ? (pos*100.0 / (pos+neg)) + "%" : "--"),
-                     negative : "" + ((pos+neg) > 0 ? (neg*100.0 / (pos+neg)) + "%" : "--")  };
+                     positive : "" + ((pos+neg) > 0 ? (pos*100.0 / (pos+neg)).toFixed(2) + "%" : "--"),
+                     negative : "" + ((pos+neg) > 0 ? (neg*100.0 / (pos+neg)).toFixed(2) + "%" : "--")  };
   }
   
   $http.post('/filterResponses',{qid : $scope.qid, queries:$scope.queries}).success(function(results){
