@@ -2,7 +2,52 @@ var Question = require('./models/question.js');
 var User     = require('./models/user.js');
 var Response = require('./models/response.js');
 
-module.exports = function(app) { 
+var completedRequests = 0, result = [];
+
+
+var myCallback = function(findObj, i1, i2, res,total){
+  var trueFalse = [true,false];
+  Response.count(findObj,function(err,count){
+    if(err) throw err;
+    console.log(i1);
+    trueFalse[i2] ? result[i1].positive = count : result[i1].negative = count;
+    completedRequests++;
+    if(completedRequests == total){
+      console.log(result);
+      res.json(result);
+      }
+   });
+}
+
+module.exports = function(app) {   
+  
+  app.route('/filterResponses').post(function(req,res){
+    var totalCount = 0, filteredResponses = {}, q_id = req.body.qid;
+    result = [], completedRequests = 0;
+    for( var i = 0; i < req.body.queries.length; i++){
+      var index = i, q = req.body.queries[i], field = q.field, description = q.description, value = q.val1, value_1 = q.val2;
+      result.push({field : field, description : description});
+      var trueFalse = [true, false];
+      for (var j = 0; j < trueFalse.length; j++){
+        var index2 = j;
+        var findObj = {"qid":q_id};
+        switch (field.toLowerCase()){
+          case "user_age": case "age":
+            findObj["user_age"] = {$gte : value, $lt : value_1};
+            break;
+          case "user_state" :
+            findObj["user_state"] = value;
+            break;
+          case "gender" :
+            findObj["gender"] = value;
+            break;
+        } 
+        findObj.response = trueFalse[index2];
+        myCallback(findObj,index,index2,res,req.body.queries.length*2);
+      }
+    }
+  });
+  
   app.get('/getQuestion',function (req, res) {
     Question.find({_id : req.query.id},function(err,result){
       res.json(result);  
@@ -53,51 +98,7 @@ module.exports = function(app) {
     });
   });
   
-  app.route('/filterResponses').post(function(req,res){
-    var q = req.body;
-    var q_id = q.qid,
-        field = q.field,
-        value = q.value,
-        value_1 = q.value_1;
-    var findObj = {"qid":q_id};
-    switch (field){
-      case "user_age": 
-      case "Age":
-      case "age":
-        findObj["user_age"] = {$gte : value, $lt : value_1};
-        break;
-      case "user_state" :
-        findObj["user_state"] = value;
-        break;
-      case "gender" :
-      case "Gender" :
-        findObj["gender"] = value;
-        break;
-    }
-    countCount = 0;
-    var respObj = {positive: 0, negative: 0, total: 0};
-    
-    findObj.response = true;
-    Response.count(findObj,function(err,count){
-      if(err) throw err;
-      respObj.positive = count;
-      countCount++;
-      if (countCount === 2){
-        respObj.total = respObj.positive + respObj.negative;
-        res.json(respObj);
-      }
-    });
-    findObj.response = false;
-    Response.count(findObj,function(err,count){
-      if(err) throw err;
-      respObj.negative = count;
-      countCount++;
-      if (countCount === 2){
-        respObj.total = respObj.positive + respObj.negative;
-        res.json(respObj);
-      }
-    });
-  });
+  
 
   app.post('/addUser', function(req,res){
     User.count({},function(err,count){

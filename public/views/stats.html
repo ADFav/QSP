@@ -12,32 +12,25 @@
      </div>
    </div>
    
-   
-   <div>
-     
-     So, this is where Stats are supposed to go. But that's broken? Or something. I don't know. I'll fix it
-     <br><br>
-     ADFav
-   </div>
-<!--    <div ng-repeat="(field,valueList) in fieldWidths">
+   <div ng-repeat="(field,valueList) in fieldWidths">
      <div class = "row row-with-top-border">
        <div class = "col-xs-4"></div>     
        <div class = "col-xs-6 text-center"><h1>{{field}}</h1></div>   
        <div class = "col-xs-2"></div>     
      </div>
 
-     <div ng-repeat="(valueTitle,value) in valueList">
+     <div ng-repeat="valueTitle in valueList">
        <div class = "row">    
-         <div class = "col-xs-2 text-right"><h2>{{valueTitle}}</h2></div>     
-         <div class = "col-xs-2"><h3>{{fieldValues[field][valueTitle][0]}}</h3></div>
+         <div class = "col-xs-2 text-right"><h2>{{valueTitle.description}}</h2></div>     
+         <div class = "col-xs-2"><h3>{{valueTitle.positive}}</h3></div>
          <div class = "col-xs-6">
            <div class="progress-bar">
-             <div class="pos-resp-bar" ng-style="{width : fieldValues[field][valueTitle][0]}"></div>             
-             <div class="neg-resp-bar" ng-style="{width : fieldValues[field][valueTitle][1]}"></div>   
+             <div class="pos-resp-bar" ng-style="{width : valueTitle.positive}"></div>             
+             <div class="neg-resp-bar" ng-style="{width : valueTitle.negative}"></div>   
            </div>
          </div>
-         <div class = "col-xs-2"><h3>{{fieldValues[field][valueTitle][1]}}</h3></div>
+         <div class = "col-xs-2"><h3>{{valueTitle.negative}}</h3></div>
        </div>
      </div>
-   </div> -->
+   </div>
 </div>            
