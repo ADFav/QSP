@@ -22,6 +22,9 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         }).when('/askedQuestions',{
             templateUrl: 'views/askedQuestions.html',
             controller: 'AskedController'
+        }).when('/answeredQuestions',{
+            templateUrl: 'views/answeredQuestions.html',
+            controller: 'AskedController'
         });
     $locationProvider.html5Mode(true);
 }]);

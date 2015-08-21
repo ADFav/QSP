@@ -62,6 +62,17 @@ module.exports = function(app) {
     });
   });
   
+  app.post('/answeredQuestions',function(req,res){
+    var user = req.body.uid;
+    Response.find({userid:user},function(err,resp){
+      if(err) throw err;
+      var qids = resp.map(function(item) {return item['qid'];});
+      Question.find({_id : {$in : qids}}, function(err2, questions){
+        res.json(questions);
+      });
+    });
+  });
+  
   
   app.route('/newQuestion').post(function(req,res){
     var q = req.body;

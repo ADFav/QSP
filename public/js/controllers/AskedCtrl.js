@@ -4,16 +4,25 @@ angular.module('AskedCtrl', []).controller('AskedController', function($scope,$h
   if(!$rootScope.userID) {$location.path('/login');}
   
   $scope.goStats = function(q_id){
-    console.log(q_id);
     $location.path('/stats').search({qid:q_id});
   };
   
   $scope.responses = {};
-  $scope.getQuestions = function(){
-    $http.post('/askedQuestions',{uid:$rootScope.userID}).then(function(resp){
-      $scope.responses = resp.data;
-      console.log($scope.responses);
-    });
+  $scope.getQuestions = function(type){
+    switch(type.toLowerCase()){
+      case "asked":
+        $http.post('/askedQuestions',{uid:$rootScope.userID}).then(function(resp){
+          $scope.responses = resp.data;
+        });
+        break;
+      case "answered":
+         $http.post('/answeredQuestions',{uid:$rootScope.userID}).then(function(resp){
+            $scope.responses = resp.data;
+         });
+        break;
+    }
   };  
-  $scope.getQuestions();
+  if($location.path() === "/askedQuestions") {$scope.getQuestions("asked");}
+  if($location.path() === "/answeredQuestions") {$scope.getQuestions("answered");}
+  
 });

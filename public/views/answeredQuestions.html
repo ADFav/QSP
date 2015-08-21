@@ -1,0 +1,9 @@
+<div id = "asked-questions-div">
+  <div class="row" ng-repeat="q in responses">
+    <div class="col-xs-10">
+      <h2>{{q.text}}</h2>
+    </div>
+    <div class="col-xs-2 text-center stats-button" ng-click="goStats(q._id)"><h3>Stats</h3></div>
+  </div>
+</div>
+
