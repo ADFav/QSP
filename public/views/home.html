@@ -1,8 +1,9 @@
 <div id = "home-div">
   <div class = "row questionBox">
     <div class = "col-xs-12 text-center">
+      <h2>Asked by : {{asker}}</h2>
       <h1>{{question}}</h1>
-      <h1>{{errmsg}}
+      <h1>{{errmsg}}</h1>
     </div>
   </div>
   
@@ -12,6 +13,11 @@
     </div>
     <div class = "col-xs-6 text-center" ng-click="postFalse()">
       <h2>{{response_2}}</h2>
+    </div>
+  </div>
+  <div class = "row abstainRow">
+    <div class = "col-xs-12 text-center" ng-click="switchQuestion()">
+      <h2>Abstain</h2>
     </div>
   </div>
 </div>

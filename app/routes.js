@@ -4,26 +4,22 @@ var Response = require('./models/response.js');
 
 var completedRequests = 0, result = [];
 
-
-var myCallback = function(findObj, i1, i2, res,total){
-  var trueFalse = [true,false];
-  Response.count(findObj,function(err,count){
-    if(err) throw err;
-    console.log(i1);
-    trueFalse[i2] ? result[i1].positive = count : result[i1].negative = count;
-    completedRequests++;
-    if(completedRequests == total){
-      console.log(result);
-      res.json(result);
-      }
-   });
-}
-
 module.exports = function(app) {   
   
   app.route('/filterResponses').post(function(req,res){
     var totalCount = 0, filteredResponses = {}, q_id = req.body.qid;
-    result = [], completedRequests = 0;
+    var completedRequests = 0, result = [];
+    var myCallback = function(findObj, i1, i2, res,total){
+      var trueFalse = [true,false];
+      Response.count(findObj,function(err,count){
+        if(err) throw err;
+        trueFalse[i2] ? result[i1].positive = count : result[i1].negative = count;
+        completedRequests++;
+        if(completedRequests == total){
+          res.json(result);
+          }
+       });
+    }
     for( var i = 0; i < req.body.queries.length; i++){
       var index = i, q = req.body.queries[i], field = q.field, description = q.description, value = q.val1, value_1 = q.val2;
       result.push({field : field, description : description});
@@ -50,7 +46,15 @@ module.exports = function(app) {
   
   app.get('/getQuestion',function (req, res) {
     Question.find({_id : req.query.id},function(err,result){
+      if(err) throw err;
       res.json(result);  
+    });
+  });
+  
+  app.get('/getUser',function(req,res){
+    User.findOne({_id : req.query.uid},function(err,result){
+      if(err) throw err;
+      res.json(result);
     });
   });
   
@@ -174,7 +178,7 @@ module.exports = function(app) {
           res.json({errmsg:"You have answered all of our questions. Sorry! Stay tuned for new questions!"});
         }
         else{
-        res.json(questions[Math.floor(Math.random()*questions.length)]);
+          res.json(questions[Math.floor(Math.random()*questions.length)]);
         }
       });
     });

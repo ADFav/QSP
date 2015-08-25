@@ -27,24 +27,6 @@ angular.module('StatsCtrl', []).controller('StatsController', function($scope,$r
   };
   
   switchQuestion($scope.qid);
-  var count =0;
-  
-  $scope.getResults = function(field, value, value2, valIndex){  
-    var searchQuery = {qid: $scope.qid, field : field, value: value, value_1:value2};
-    $http.post('/filterResponses',searchQuery).success(function(results){
-      count ++;
-      if (parseFloat(results.total) !== 0){
-        var result = {pos: "" + (parseFloat(100*results.positive)/parseFloat(results.total)).toFixed(2) + "%",
-                      neg: "" + (parseFloat(100*results.negative)/parseFloat(results.total)).toFixed(2) + "%"};}
-      else{
-        var result = {pos : "0%", neg:"0%"};
-      }
-      $scope.fieldWidths[field][valIndex][0]= result.pos;
-      $scope.fieldWidths[field][valIndex][1]= result.neg;
-      count === 9 ? console.log($scope.fieldWidths) : console.log(count);
-      
-    });
-  };
   
  $scope.queries = [{field: 'Total' , description : "",         val1 : "",  val2 : ""},
                    {field: 'Gender', description : "Male",     val1 : "m", val2 : ""},
@@ -63,8 +45,10 @@ angular.module('StatsCtrl', []).controller('StatsController', function($scope,$r
   var convertToPercentages = function(obj){
     var pos = obj.positive, neg  = obj.negative;
     return result = {description : obj.description, 
-                     positive : "" + ((pos+neg) > 0 ? (pos*100.0 / (pos+neg)).toFixed(2) + "%" : "--"),
-                     negative : "" + ((pos+neg) > 0 ? (neg*100.0 / (pos+neg)).toFixed(2) + "%" : "--")  };
+                     positive : "" + ((pos+neg) > 0 ? (pos*100.0 / (pos+neg)).toFixed(2) + "%" : ""),
+                     negative : "" + ((pos+neg) > 0 ? (neg*100.0 / (pos+neg)).toFixed(2) + "%" : "--"),
+                     posRatio : "" + ((pos+neg) > 0 ? (pos + "/" + (pos+neg)) : "--"),
+                     negRatio : "" + ((pos+neg) > 0 ? (neg + "/" + (pos+neg)) : "--")};
   }
   
   $http.post('/filterResponses',{qid : $scope.qid, queries:$scope.queries}).success(function(results){
@@ -72,6 +56,5 @@ angular.module('StatsCtrl', []).controller('StatsController', function($scope,$r
     results.forEach(function(result){
      (result.field in $scope.fieldWidths) ? $scope.fieldWidths[result.field].push(convertToPercentages(result)) : $scope.fieldWidths[result.field] = [convertToPercentages(result)]; 
     });
-    console.log($scope.fieldWidths);
   });
 });

@@ -15,20 +15,19 @@ angular.module('LoginCtrl', []).controller('LoginController', function($scope,$h
     console.log(credentials);
     
    $http.post('/login',credentials).then(function(response){
-     console.log(response.data.message);
       switch (response.data.message){
         case "wrongUID":
-        $scope.errmsg = "That username is not in our database. Please re-enter it";
-        break;
-      case "wrongPWD":
-        $scope.errmsg = "That password does not match that username, please try again";
-        break;
-      case "success":
-        $rootScope.userID = response.data.uid;
-        $location.path('/home');
-        break;  
-      default:
-        $scope.errmsg = "";
+          $scope.errmsg = "That username is not in our database. Please re-enter it";
+          break;
+        case "wrongPWD":
+          $scope.errmsg = "That password does not match that username, please try again";
+          break;
+        case "success":
+          $rootScope.userID = response.data.uid;
+          $location.path('/home');
+          break;  
+        default:
+          $scope.errmsg = "";
       }
     });
   };

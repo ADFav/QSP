@@ -22,14 +22,14 @@
      <div ng-repeat="valueTitle in valueList">
        <div class = "row">    
          <div class = "col-xs-2 text-right"><h2>{{valueTitle.description}}</h2></div>     
-         <div class = "col-xs-2"><h3>{{valueTitle.positive}}</h3></div>
+         <div class = "col-xs-2 text-center"><h3>{{valueTitle.posRatio}}</h3></div>
          <div class = "col-xs-6">
            <div class="progress-bar">
              <div class="pos-resp-bar" ng-style="{width : valueTitle.positive}"></div>             
              <div class="neg-resp-bar" ng-style="{width : valueTitle.negative}"></div>   
            </div>
          </div>
-         <div class = "col-xs-2"><h3>{{valueTitle.negative}}</h3></div>
+         <div class = "col-xs-2 text-center"><h3>{{valueTitle.negRatio}}</h3></div>
        </div>
      </div>
    </div>

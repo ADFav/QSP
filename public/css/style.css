@@ -111,13 +111,20 @@ ul.nav>li:active, ul.nav>li.active{
 }
 
 #home-div .questionBox{
-  height : 70%;
+  height : 55%;
   background-color : #999;
   border-color : transparent #777 #777 transparent;
   border-width : 25px;
   border-style : solid;
 }
 
+#home-div .questionBox > div > h2{
+  position : absolute;
+  left : -25px;
+  top  : -25px;
+  color : white;
+  margin : 0;
+}
 #home-div .answerRow{
   height : 30%;
 }
@@ -150,6 +157,25 @@ ul.nav>li:active, ul.nav>li.active{
   border-color     : transparent #55F #55F transparent;
 }
 
+#home-div .abstainRow{
+ height : 15%; 
+}
+
+#home-div .abstainRow > div{
+  width : 100%;
+  height : 100%;
+  color : white;
+  background-color : #000;
+  border-width : 25px;
+  border-style : solid;
+  border-color : transparent #222 #222 transparent;
+  transition : 1s;
+}
+
+#home-div .abstainRow > div:active{
+  background-color : #222;
+  border-color : transparent #444 #444 transparent;
+}
 /*---- ADDQUESTION VIEW ----- */
 #addQuestion-div{
   background-color : #AAA;
