@@ -1,48 +1,13 @@
-<div id="login-div">
-  <div class="row">
-    <div class="col-xs-12 errMsg text-center">
-      <h2>{{errmsg}}<h2>
-    </div>
-  </div>
+<div id="login-div">  
+  <div class="errmsg">{{errmsg}}</div>
   
-  <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8 text-center"><h1>Username</h1></div>
-    <div class="col-xs-2"></div>
-  </div>
-  
-  <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8">
-      <input type="text" ng-model="userID">
-    </div>
-    <div class="col-xs-2"></div>
-  </div>
+  <div class="username"><h1>Username</h1></div>
+  <input type="text" ng-model="userID">
 
-  <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8 text-center"><h1><br>Password</h1></div>
-    <div class="col-xs-2"></div>
-  </div>
+  <div class="password"><h1>Password</h1></div>
+  <input type="password" ng-model="password">
+
+  <button ng-click="mySubmit()"><h1>Login</h1></button>
   
-  <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8">
-      <input type="password" ng-model="password">    
-    </div>
-    <div class="col-xs-2"></div>
-  </div>
-  
-  <div class="row">
-    <div class="col-xs-4"></div>
-    <div class="col-xs-4 text-center"><button ng-click="mySubmit()" class="btn-default"><h1>Login</h1></button></div>
-    <div class="col-xs-4"></div>
-  </div>
-  
-  <div class = "row">
-    <div class = "col-xs-12 text-center">
-      <br><br><h4>Don't have an account? <a href="/addUser">Sign Up here!</a></h4>
-    </div>
-  </div>
-  
+  <div class="signUp"><h2>Don't have an account? <a href="/addUser">Sign Up here!</a></h2></div>  
 </div>

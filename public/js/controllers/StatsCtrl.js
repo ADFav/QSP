@@ -8,7 +8,6 @@ angular.module('StatsCtrl', []).controller('StatsController', function($scope,$r
   };
   
   $scope.qid       =  $location.search().qid;
-  console.log($scope.qid);
   $scope.question  = "";
   $scope.response_1 = "";
   $scope.response_2 = "";  

@@ -2,30 +2,25 @@ var Question = require('./models/question.js');
 var User     = require('./models/user.js');
 var Response = require('./models/response.js');
 
-var completedRequests = 0, result = [];
-
 module.exports = function(app) {   
   
   app.route('/filterResponses').post(function(req,res){
-    var totalCount = 0, filteredResponses = {}, q_id = req.body.qid;
-    var completedRequests = 0, result = [];
-    var myCallback = function(findObj, i1, i2, res,total){
-      var trueFalse = [true,false];
+    var totalCount = 0, filteredResponses = {}, q_id = req.body.qid, queries = req.body.queries.length;
+    var completedRequests = 0, result = [], trueFalse = [true,false];
+    var myCallback = function(findObj, i, j, res,total){
       Response.count(findObj,function(err,count){
         if(err) throw err;
-        trueFalse[i2] ? result[i1].positive = count : result[i1].negative = count;
+        trueFalse[j] ? result[i].positive = count : result[i].negative = count;
         completedRequests++;
         if(completedRequests == total){
           res.json(result);
-          }
-       });
+        }
+      });
     }
-    for( var i = 0; i < req.body.queries.length; i++){
-      var index = i, q = req.body.queries[i], field = q.field, description = q.description, value = q.val1, value_1 = q.val2;
+    for( var i = 0; i < queries; i++){
+      var q = req.body.queries[i], field = q.field, description = q.description, value = q.val1, value_1 = q.val2;
       result.push({field : field, description : description});
-      var trueFalse = [true, false];
       for (var j = 0; j < trueFalse.length; j++){
-        var index2 = j;
         var findObj = {"qid":q_id};
         switch (field.toLowerCase()){
           case "user_age": case "age":
@@ -38,8 +33,8 @@ module.exports = function(app) {
             findObj["gender"] = value;
             break;
         } 
-        findObj.response = trueFalse[index2];
-        myCallback(findObj,index,index2,res,req.body.queries.length*2);
+        findObj.response = trueFalse[j];
+        myCallback(findObj,i,j,res,queries*2);
       }
     }
   });
@@ -54,21 +49,20 @@ module.exports = function(app) {
   app.get('/getUser',function(req,res){
     User.findOne({_id : req.query.uid},function(err,result){
       if(err) throw err;
+      console.log(result);
       res.json(result);
     });
   });
   
   app.post('/askedQuestions',function(req,res){
-    var user = req.body.uid;
-    Question.find({asker:user},function(err,resp){
+    Question.find({asker:req.body.uid},function(err,resp){
       if(err) throw err;
       res.json(resp);
     });
   });
   
   app.post('/answeredQuestions',function(req,res){
-    var user = req.body.uid;
-    Response.find({userid:user},function(err,resp){
+    Response.find({userid: req.body.uid},function(err,resp){
       if(err) throw err;
       var qids = resp.map(function(item) {return item['qid'];});
       Question.find({_id : {$in : qids}}, function(err2, questions){
@@ -76,8 +70,7 @@ module.exports = function(app) {
       });
     });
   });
-  
-  
+    
   app.route('/newQuestion').post(function(req,res){
     var q = req.body;
     var newQuestion = new Question({
@@ -86,7 +79,7 @@ module.exports = function(app) {
       tags : [q.tags],
       responses : [q.response1, q.response2]
     });
-    
+  
     newQuestion.save(function(err){
       if (err) throw err;
       res.send("new question saved!");
@@ -112,8 +105,6 @@ module.exports = function(app) {
       });
     });
   });
-  
-  
 
   app.post('/addUser', function(req,res){
     User.count({},function(err,count){

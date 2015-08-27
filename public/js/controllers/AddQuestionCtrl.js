@@ -10,20 +10,15 @@ angular.module('AddQuestionCtrl', []).controller('AddQuestionController', functi
   
   $scope.postQuestion = function(){
     var tagList = [];
-    console.log($scope.tagResponses);
     for(var key in $scope.tagResposnes){$scope.tagResponses[key] ? tagList.push(key) : "";}
-    var question = 
-        {text : $scope.text,
-         tags : tagList,
-         responses : $scope.responses,
-         asker : $rootScope.userID};
+    var question = {
+      text : $scope.text,
+      tags : tagList,
+      responses : $scope.responses,
+      asker : $rootScope.userID
+    };
     $http.post("/addQuestion",question).then(function(response){
-      if(response.errmsg){
-        $scope.errmsg = response.errmsg;
-      } 
-      else{
-       $location.path("/addQuestion"); 
-      }
+      (response.errmsg) ? ($scope.errmsg = response.errmsg) : $location.path("/addQuestion"); 
     });
     $scope.text = "";
     $scope.responses = ["",""];

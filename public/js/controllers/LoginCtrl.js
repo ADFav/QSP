@@ -12,7 +12,6 @@ angular.module('LoginCtrl', []).controller('LoginController', function($scope,$h
   
   $scope.mySubmit = function(){
     var credentials = {uid : $scope.userID, pwd : $scope.password};
-    console.log(credentials);
     
    $http.post('/login',credentials).then(function(response){
       switch (response.data.message){

@@ -25,6 +25,9 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         }).when('/answeredQuestions',{
             templateUrl: 'views/answeredQuestions.html',
             controller: 'AskedController'
+        }).when('/profile',{
+            templateUrl: 'views/profile.html',
+            controller: 'ProfileController'
         });
     $locationProvider.html5Mode(true);
 }]);
