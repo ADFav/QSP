@@ -1,47 +1,30 @@
 <div id = "addQuestion-div">
-  <h1>Question Text :</h1>
-  <textarea rows = "3" ng-model = "text" id = "questionText"></textarea>
-  
-  <h1>Tags</h1>      
-  <div class = "row">
-    <div ng-repeat="(tag, resp) in tagResponses">
-      <div class = "col-xs-3 text-center">
-        <input type ="checkbox" id ={{tag}} ng-model="tagResponses[tag]">
-        <label for={{tag}}><div>{{tag}}</div></label>
-      </div>
-    </div>
-    <div class = "col-xs-3">
-      <h2 ng-style="{'font-weight':'bold','color':'rgb(46, 8, 84)'}">Custom:</h2>
-    </div>
-    <div class = "col-xs-6">
-      <input type ="text" ng-model ="customTag" id = "customTag">>
-    </div>
-  </div><!-- row -->
-    
-  <div class = "row">
-    <div class = "col-xs-12 text-center"><h1>Responses</h1></div>
-  </div><!-- row -->
-  
-      
-  <div class = "row">
-    <div class = "col-xs-6 text-center"><input type = "text" ng-model = "responses[0]" id = "Response1"></div>
-    <div class = "col-xs-6 text-center"><input type = "text" ng-model = "responses[1]" id = "Response2"></div>
-  </div><!-- row -->
-
-  <div class = "row">
-    <div class = "col-xs-4 text-center"></div>
-    <div class = "col-xs-4 text-center">
-      <button class="btn-lg" ng-click="postQuestion()"><h1>Submit</h1></button>
-    </div>
-    <div class = "col-xs-4 text-center"></div>
-  </div>     
-  
-  <div class = "row">
-    <div class = "col-xs-2"></div>
-    <div class = "col-xs-8">
-      {{errmsg}}
-    </div>
-    <div class = "col-xs-2"></div>
+  <div id = "QuestionText">
+    <h1>Question Text</h1>
+    <textarea rows = "3" ng-model = "text" id = "questionText"></textarea>
   </div>
+  
+  <div id = "Tags">
+    <h1>Tags</h1> <br>
+    <div ng-repeat="(tag, resp) in tagResponses" class = "label">
+      <input id ={{tag}} type="checkbox" ng-model="tagResponses[tag]">
+      <label for={{tag}}>{{tag}}</label>
+    </div>
+  
+    <label>
+      <h2 ng-style="{'font-weight':'bold','color':'rgb(46, 8, 84)'}">Custom:</h2>
+    </label>
+    <input type ="text" ng-model ="customTag" id = "customTag">
+  </div>
+  
+  <div id="Responses">
+    <h1>Responses</h1>
+    <input type = "text" ng-model = "responses[0]" id = "Response1">
+    <input type = "text" ng-model = "responses[1]" id = "Response2">
+  </div>
+  
+  <button ng-click="postQuestion()"><h1>Submit</h1></button>
+
+  <div class="errMsg"></div>
 
 </div>

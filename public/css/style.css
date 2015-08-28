@@ -1,4 +1,7 @@
-body, html, nav, ol, h1, h2{
+*{
+  box-sizing : border-box;
+}
+body, html, nav, ol, h1, h2, h3{
   margin      : 0;
   padding     : 0;
   text-align  : center;
@@ -48,6 +51,8 @@ nav ol li:last-child{
   width             : 100%;
   background-color  : rgba(0,0,255,0.25);
 }
+
+.clear{  clear : both;}
 
 .container>div{
   height   : 100%;
@@ -137,7 +142,6 @@ nav ol li:last-child{
   border-color : transparent #777 #777 transparent;
   border-width : 25px;
   border-style : solid;
-  display : table;
 }
 
 #home-div .questionBox h2{
@@ -148,7 +152,11 @@ nav ol li:last-child{
   position : absolute;
 }
 
-#home-div div.questionText{
+#home-div .table{
+  display : table;
+}
+
+#home-div .table > .centeredText{
   display : table-cell;
   vertical-align : middle;
 }
@@ -157,7 +165,7 @@ nav ol li:last-child{
   height : 30%;
 }
 
-#home-div .answerRow div{
+#home-div .answerRow > div{
   box-sizing : border-box;
   border-width : 25px;
   border-style : solid;
@@ -167,22 +175,22 @@ nav ol li:last-child{
   width : 50%;
 }
 
-#home-div .answerRow div:first-child{
+#home-div .answerRow > div:first-child{
   background-color : #F99;
   border-color     : transparent #F77 #F77 transparent;
 }
 
-#home-div .answerRow div:first-child:active{
+#home-div .answerRow > div:first-child:active{
   background-color : #F77;
   border-color     : transparent #F55 #F55 transparent;
 }
 
-#home-div .answerRow div:last-of-type{
+#home-div .answerRow > div:last-of-type{
   background-color : #99F;
   border-color     : transparent #77F #77F transparent;
 }
 
-#home-div .answerRow div:last-child:active{
+#home-div .answerRow > div:last-child:active{
   background-color : #77F;
   border-color     : transparent #55F #55F transparent;
 }
@@ -207,40 +215,53 @@ nav ol li:last-child{
   overflow-y : scroll;
 }
 
+#addQuestion-div>div{
+  display : block;
+  float : left;
+  clear : both;
+  margin-bottom: 100px;
+}
+
 #addQuestion-div #questionText{
   border-color  : transparent black black transparent;
   border-width : 25px;
   border-style  : solid;
   font-size : 50px;
+  width : 75%;
+  margin-left : auto;
+  margin-right : auto;
   overflow-y : scroll;
 }
 
 #addQuestion-div input, #addQuestion-div textarea{
   font-size : 36px;
-  width : 100%;
 }
 
-#addQuestion-div input[type="checkbox"] + label{
-  width : 100%;
-  height : 100%;
-}
+/* #addQuestion-div #tags h1{
+  float : none;
+} */
 
-#addQuestion-div input[type="checkbox"] + label>div{
-  width : 100%;
+#addQuestion-div label{
+  width : 24%;
+  font-weight : bold;
+  margin-top : 10px;
+  float : left;
+  margin-right : 1.3333333%;
   height : 100%;
   color : #2E0854;
-  font-size : 30px;
+  font-size : 35px;
   border : #72587F 10px solid;
   border-color : transparent #72587F #72587F transparent;
 }
 
-#addQuestion-div input[type="checkbox"]:checked + label>div{
+#addQuestion-div input[type="checkbox"]:checked + label{
   background-color : #72587F;
-  border-width : 10px;
-  border-style : solid;
   border-color : transparent #2E0854 #2E0854 transparent;
   color : white;
-  box-styling : border-box;
+}
+
+#addQuestion-div #Tags div:nth-child(4n+2) label{
+  margin-right : 0;
 }
 
 #addQuestion-div input[type="checkbox"]{
@@ -251,16 +272,235 @@ nav ol li:last-child{
   border-width : 10px;
   border-style : solid;
   border-color : transparent #72587F #72587F transparent;
+  width : 49.333%;
+  margin-right : 0%;
+  margin-top   : 10px;
+  float : left;
+  font-size : 35px;
+  font-weight : bold;
+  color : #2E0854;
+}
+
+#addQuestion-div #Response1, #addQuestion-div #Response2{
+  width : 49%;
+  float : left;
+  border-width : 10px;
+  border-style : solid;
 }
 
 #addQuestion-div #Response1{
-  border-width : 10px;
-  border-style : solid;
+  margin-right : 1%;
   border-color : transparent #F77 #F77 transparent;
 }
 
 #addQuestion-div #Response2{
+  margin-left : 1%;
+  border-color : transparent #77F #77F transparent;
+}
+
+#addQuestion-div button{
+  width : 40%;
+  margin-left : auto;
+  margin-right : auto;
+}
+
+/*---- ASKEDQUESTIONS VIEW ----- */
+#asked-questions-div{
+  box-sizing : border-box;
+  border-color : transparent #666 #666 transparent;
+  border-width : 25px;
+  border-style : solid;
+  background-color : #888;
+  overflow-y : scroll;
+}
+
+#asked-questions-div .row{
+  width : 100%;
+  float : left;
+  display : inline-block;
+}
+
+#asked-questions-div .row .col-xs-10{
+  width : 80%;
+  float : left;
+}
+
+#asked-questions-div .row .col-xs-10 h2{
+  text-align : left;
+}
+
+#asked-questions-div .row .col-xs-2{
+  width : 20%;
+  float : left;
+  text-align : center;
+}
+
+#asked-questions-div .row .clear{
+  clear : both;
+}
+#asked-questions-div .row:nth-of-type(even){
+  background-color : #888;
+}
+
+#asked-questions-div .row:nth-of-type(odd){
+  background-color : #777;
+}
+
+#asked-questions-div .stats-button{
+  border-color : transparent #228b22 #228b22 transparent;
   border-width : 10px;
   border-style : solid;
-  border-color : transparent #77F #77F transparent;
+  background-color : #1b6f1b;
+  color : white;
+  text-align : center;
+}
+
+/*---- STATS VIEW ----- */
+#stats-div{
+  background-color : #CCC;
+  border-color : transparent #AAA #AAA transparent;
+  border-width : 25px;
+  border-style : solid;
+  overflow-y : scroll;
+}
+
+/* 
+#stats-div .overflow{
+  overflow-y : auto;
+  position : absolute;
+  bottom : 0;
+} */
+#stats-div .response{
+  width : 17%;
+  margin-left : 2%;
+  display : inline-block;
+  vertical-align : bottom;
+  float : left;
+}
+
+#stats-div .qText, #stats-div .progress-bar{
+  width : 50%;
+  float : left;
+  margin-left : 2%;
+}
+
+#stats-div .category{
+  border-top : solid 10px black;
+  margin-top : 25px;
+  padding-left : 11%;
+  width : 100%;
+}
+
+#stats-div .description{
+  width : 10%;
+  float : left;
+  border : 1px dashed transparent;
+}
+
+#stats-div .progress-bar{
+  box-sizing : border-box;
+  border-width : 10px;
+  border-style : solid;
+  border-color : transparent black black transparent;
+  height : 75px;
+  background-color : transparent;
+  position : relative;
+}
+
+#stats-div .progress-bar .pos-resp-bar{
+  box-sizing : border-box;
+  background-color : #F77;
+  border-right : 2px solid black;
+  position : absolute;
+  left : 0;
+  height : 100%;
+}
+
+#stats-div .progress-bar .neg-resp-bar{
+  box-sizing : border-box;
+  background-color : #77F;
+  border-left : 2px solid black;
+  position : absolute;
+  right : 0;
+  height : 100%;
+}
+
+/*---- PROFILE VIEW ----- */
+#profile-div{
+  background-color : #AAA;
+  border-color  : transparent #888 #888 transparent;
+  border-width : 25px;
+  border-style  : solid;
+  height : 100%;
+}
+
+#profile-div .split{
+  float : left;
+  width : 50%;
+}
+
+#profile-div .profile-fields h3{  text-align : right;}
+#profile-div .profile-values h3{  text-align : left;}
+
+#profile-div .img-row img{
+  width : 200px;
+  height : 200px;
+  border : 5px solid black;
+  box-sizing : border-box;
+  margin-left : auto;
+  margin-right : auto;
+}
+
+#profile-div .bottom-half{
+  position : absolute;
+  top : 250px;
+  bottom : 50px;
+}
+
+#profile-div .titles .split{
+  margin-left : 5%;
+  margin-right : 5%;
+  border-bottom : 10px solid black;
+  width : 40%;
+}
+#profile-div .bottom-half>div:not(.titles){
+  position : relative;
+  height : 100%;
+  overflow-y : scroll;
+}
+#profile-div .questions-Row div{
+  border-bottom : 5px solid black;
+  box-sizing : border-box;
+}
+
+#profile-div .row:nth-of-type(even){
+  background-color : #888;
+}
+
+#profile-div .row:nth-of-type(odd){
+  background-color : #777;
+}
+
+#profile-div .qText{
+  float : left;
+  width : 80%;
+}
+
+#profile-div .qText h2{
+  text-align : left;
+}
+
+#profile-div .statsButton{
+  border-color : transparent #228b22 #228b22 transparent;
+  border-width : 10px;
+  border-style : solid;
+  background-color : #1b6f1b;
+  color : white;
+  text-align : center;
+  width : 20%;
+  float : left;  
+}
+
+#profile-div .statsButton h2{
+  font-size : 25px;
 }

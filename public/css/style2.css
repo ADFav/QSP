@@ -253,7 +253,7 @@ ul.nav>li:active, ul.nav>li.active{
 }
 
 #stats-div .row-with-top-border{
-  border-top : solid 10px black;
+  border-top : solid 10px black;/
   margin-top : 25px;
 }
 

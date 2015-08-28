@@ -3,6 +3,10 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
   
   if(!$rootScope.userID) {$location.path('/login');}
   
+  $scope.goProfile = function(uid){
+    $location.path('/profile').search({uid:uid})
+  }
+  
 //   $scope.qid        = 1;
 //   $scope.asker      = "";
 //   $scope.question   = "";
@@ -14,13 +18,14 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
     $http.get('/getNewQuestion?uid='+$rootScope.userID).success(function(q_obj){
       if(!q_obj.errmsg){
         $scope.errmsg     = "";
-        $http.get('/getUser?uid='+q_obj.asker).success(function(user){
-          $scope.asker      = user.username;
-        });
         $scope.question   = q_obj.text;
         $scope.response_1 = q_obj.responses[0];
         $scope.response_2 = q_obj.responses[1];
         $scope.qid        = q_obj._id;
+        $scope.askerid    = q_obj.asker;
+        $http.get('/getUser?uid='+q_obj.asker).success(function(user){
+          $scope.asker      = user.username;
+        });
       }
       else{
         $scope.errmsg     = q_obj.errmsg;
@@ -29,6 +34,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
         $scope.response_1 = "";
         $scope.response_2 = "";
         $scope.qid        = "";
+        $scope.askerid    = "";
       }
     });
   };  
@@ -41,8 +47,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
       $http.post("/newResponse",postData).
         success(function(data){
           $scope.switchQuestion();    
-      }).
-        error (function(data){
+      }).error (function(data){
       });
     }
   };

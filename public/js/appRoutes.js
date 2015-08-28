@@ -23,7 +23,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             templateUrl: 'views/askedQuestions.html',
             controller: 'AskedController'
         }).when('/answeredQuestions',{
-            templateUrl: 'views/answeredQuestions.html',
+            templateUrl: 'views/askedQuestions.html',
             controller: 'AskedController'
         }).when('/profile',{
             templateUrl: 'views/profile.html',

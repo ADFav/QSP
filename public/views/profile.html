@@ -1,50 +1,46 @@
- <div id ="profile-div">
-   <div class = "row profile-info">
-     <div class = "col-xs-6 text-center"><h1>{{username}}</h1></div>  
-     <div class = "col-xs-6 img-row"><img ng-src="img/profile"></div>
-   </div>
-   <div class="row more-profile-info">
-     <div class = "col-xs-3 text-right">
-       <h3>Age:</h3><br> 
-       <h3>Gender:</h3><br> 
-       <h3>State:</h3>
-     </div>
-     <div class = "col-xs-3 text-left"> 
-       <h3>{{age}}</h3><br>
-       <h3>{{gender}}</h3><br>
-       <h3>{{state}}</h3>
-     </div>
-   </div>
-   <div class = "row">
-     <div class = "col-xs-6">
-       <div class = "container-fluid">
-         <div class = "row questions-Row">
-           <div class = "col-xs-12 text-center">
-             <h2>Asked Questions</h2>
-           </div>
-         </div>
-         <div class = "askedQuestions">
-           <div class = "row" ng-repeat = "q in askedQuestions">
-             <div class = "col-xs-10"><h3>{{q.text}}</h3></div>
-             <div class = "col-xs-2"> <h3>Stats</h3></div>
-           </div>
-         </div>
-       </div>
-     </div>
-     <div class = "col-xs-6">
-       <div class = "container-fluid">
-         <div class = "row questions-Row">
-           <div class = "col-xs-12 text-center">
-             <h2>Answered Questions</h2>
-           </div>
-         </div>
-         <div class = "answeredQuestions">
-           <div class = "row" ng-repeat = "q in answeredQuestions">
-             <div class = "col-xs-10"><h3>{{q.text}}</h3></div>
-             <div class = "col-xs-2"> <h3>Stats</h3></div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
-</div>            
+<div id ="profile-div">
+  <div class = "top-half">
+    <div class = "profile-info split">
+      <h1>{{username}}</h1>
+      <div class="profile-fields split">
+        <h3>Age:</h3><br> 
+        <h3>Gender:</h3><br> 
+        <h3>State:</h3>
+      </div>
+      <div class = "profile-values split"> 
+        <h3>{{age}}</h3><br>
+        <h3>{{gender}}</h3><br>
+        <h3>{{state}}</h3>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <div class = "img-row split">
+      <img ng-src="img/profile">
+      <div class="clear"></div>
+    </div>
+    <div class = "clear"></div>
+  </div>
+
+  <div class = "bottom-half">
+    <div class = "titles">
+      <div class = "split"><h2>Asked Questions</h2></div>
+      <div class = "split"><h2>Answered Questions</h2></div>
+      <div class = "clear"></div>
+    </div>
+    <div class = "askedQuestions split">
+      <div class = "row" ng-repeat = "q in askedQuestions">
+        <div class = "qText"><h2>{{q.text}}</h2></div>
+        <div class = "statsButton" ng-click="goStats(q._id)"> <h2>Stats</h2></div>
+        <div class = "clear"></div>
+      </div>
+    </div>
+    <div class = "askedQuestions split">
+      <div class = "row" ng-repeat = "q in answeredQuestions">
+        <div class = "qText"><h2>{{q.text}}</h2></div>
+        <div class = "statsButton" ng-click="goStats(q._id)"> <h2>Stats</h2></div>
+        <div class = "clear"></div>
+      </div>
+    </div>
+  </div>
+</div>

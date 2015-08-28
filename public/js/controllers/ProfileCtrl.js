@@ -7,7 +7,13 @@ angular.module('ProfileCtrl', []).controller('ProfileController', function($scop
     $location.path(path);
   };
   
-  $http.get('/getUser?uid=1').success(function(result){
+  $scope.goStats = function(q_id){
+    $location.path('/stats').search({qid:q_id});
+  };
+  
+  var userid = $location.search().uid;
+  
+  $http.get('/getUser?uid='+userid).success(function(result){
     $scope.age       = result.age;
     $scope.username = result.username;
     $scope.gender    = (result.gender === 'm') ? "Male" : "Female";

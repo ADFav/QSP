@@ -1,36 +1,26 @@
  <div id ="stats-div">
-   <div class = "row">
-     <div class = "col-xs-2"></div>     
-     <div class = "col-xs-2 text-center">
-       <h2>{{response_1}}</h2>
-     </div>
-     <div class = "col-xs-6 text-center">
-       <h1>{{question}}</h1>   
-     </div>
-     <div class = "col-xs-2 text-center">
-       <h2>{{response_2}}</h2>
-     </div>
+   <div class = "fixed-row">
+     <div class = "description"></div>
+     <div class = "response"><h2>{{response_1}}</h2></div>
+     <div class = "qText">   <h1>{{question}}  </h1></div>
+     <div class = "response"><h2>{{response_2}}</h2></div>
+     <div class = "clear"></div>
    </div>
    
-   <div ng-repeat="(field,valueList) in fieldWidths">
-     <div class = "row row-with-top-border">
-       <div class = "col-xs-4"></div>     
-       <div class = "col-xs-6 text-center"><h1>{{field}}</h1></div>   
-       <div class = "col-xs-2"></div>     
-     </div>
-
-     <div ng-repeat="valueTitle in valueList">
-       <div class = "row">    
-         <div class = "col-xs-2 text-right"><h2>{{valueTitle.description}}</h2></div>     
-         <div class = "col-xs-2 text-center"><h3>{{valueTitle.posRatio}}</h3></div>
-         <div class = "col-xs-6">
-           <div class="progress-bar">
-             <div class="pos-resp-bar" ng-style="{width : valueTitle.positive}"></div>             
-             <div class="neg-resp-bar" ng-style="{width : valueTitle.negative}"></div>   
-           </div>
+   <div class = "overflow">
+     <div ng-repeat="(field,valueList) in fieldWidths">
+       <div class = "category"><h1>{{field}}</h1></div>
+       <div class = "clear"></div>
+       <div ng-repeat="valueTitle in valueList">
+         <div class = "description"><h2>{{valueTitle.description}}</h2></div>     
+         <div class = "response"><h2>{{valueTitle.posRatio}}</h2></div>
+         <div class="progress-bar">
+           <div class="pos-resp-bar" ng-style="{width : valueTitle.positive}"></div>             
+           <div class="neg-resp-bar" ng-style="{width : valueTitle.negative}"></div>   
          </div>
-         <div class = "col-xs-2 text-center"><h3>{{valueTitle.negRatio}}</h3></div>
-       </div>
-     </div>
-   </div>
-</div>            
+         <div class="response"><h2>{{valueTitle.negRatio}}</h2></div>
+         <div class="clear"></div>
+       </div>  <!--ng-repeat2-->
+     </div>    <!--ng-repeat1-->
+   </div>      <!--overflow-->
+</div>
