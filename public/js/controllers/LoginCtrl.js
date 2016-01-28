@@ -76,7 +76,7 @@ angular.module('LoginCtrl', []).controller('LoginController', function($scope,$h
         gapi.signin.render('signInButton',
             {
                 'callback': $scope.signInCallback, // Function handling the callback.
-                'clientid': '[CLIENT_ID from Google developer console]', // CLIENT_ID from developer console which has been explained earlier.
+                'clientid': '123132454800-mk76q3qhmamd72u900uii446fdbvtlb7.apps.googleusercontent.com ', // CLIENT_ID from developer console which has been explained earlier.
                 'requestvisibleactions': 'http://schemas.google.com/AddActivity', // Visible actions, scope and cookie policy wont be described now,
                                                                                   // as their explanation is available in Google+ API Documentation.
                 'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email',
