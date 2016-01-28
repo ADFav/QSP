@@ -9,5 +9,20 @@
 
   <button ng-click="mySubmit()"><h1>Login</h1></button>
   
+  <span id="googleSignIn">
+    <span id="signInButton">
+    </span>
+</span>
+  <script>// <![CDATA[
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; 
+      po.async = true;
+      po.src = 'https://apis.google.com/js/client:plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+// ]]></script>
+  
+  <!--CLIENT ID : 123132454800-mk76q3qhmamd72u900uii446fdbvtlb7.apps.googleusercontent.com -->
+  
   <div class="signUp"><h2>Don't have an account? <a href="/addUser">Sign Up here!</a></h2></div>  
 </div>
