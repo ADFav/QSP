@@ -9,7 +9,15 @@
 
   <button ng-click="mySubmit()"><h1>Login</h1></button>
   
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <button class="g-signin2" data-onsuccess="onSignIn"></button>
+  <script>
+    function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+    }</script>
   
   <div class="signUp"><h2>Don't have an account? <a href="/addUser">Sign Up here!</a></h2></div>  
 </div>
