@@ -1,4 +1,9 @@
-<div id="login-div">  
+<div id="login-div">
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <script>
+    var renderButton = function(){gapi.signin2.render("signinwithgoogle",{"theme":"dark"});};
+  </script>
+  <meta name="google-signin-client_id" content="123132454800-mk76q3qhmamd72u900uii446fdbvtlb7.apps.googleusercontent.com">
   <div class="errmsg">{{errmsg}}</div>
   
   <div class="username"><h1>Username</h1></div>
