@@ -1,4 +1,6 @@
 <div id="login-div">  
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  
   <div class="errmsg">{{errmsg}}</div>
   
   <div class="username"><h1>Username</h1></div>
@@ -9,7 +11,7 @@
 
   <button ng-click="mySubmit()"><h1>Login</h1></button>
   
-  <button class="g-signin2" data-onsuccess="onSignIn"></button>
+  <button class="g-signin2" id = "signinwithgoogle" data-onsuccess="onSignIn"></button>
   <script>
     function onSignIn(googleUser) {
       var profile = googleUser.getBasicProfile();
