@@ -1,6 +1,6 @@
 qsp.controller('LoginController', function($scope,$http,$location,$rootScope) {
   
-  gapi.signin2.render("signinwithgoogle",{
+  /*gapi.signin2.render("signinwithgoogle",{
     'scope': 'email',
     'width': 200,
     'height': 50,
@@ -8,7 +8,7 @@ qsp.controller('LoginController', function($scope,$http,$location,$rootScope) {
     'theme': 'dark',
     'onsuccess': handleSuccess,
     'onfailure': handleFailure
-  });
+  });*/
   
   $scope.errmsg    = "";
   $scope.userID    = $rootScope.userID ? $rootScope.userID : "";
