@@ -42,7 +42,7 @@
   </body>
   
   <script>
-    var qsp = angular.module('qsp', ['ngRoute', 'appRoutes', 'MainCtrl','StatsCtrl','LoginCtrl','AskedCtrl','ProfileCtrl','AddQuestionCtrl']);
+    var qsp = angular.module('qsp', ['ngRoute',]);// 'appRoutes', 'MainCtrl','StatsCtrl','LoginCtrl','AskedCtrl','ProfileCtrl','AddQuestionCtrl']);
     qsp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
