@@ -1,5 +1,4 @@
-// public/js/appRoutes.js QSP
-// angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+// qsp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 //     $routeProvider
 //         .when('/', {
 //             templateUrl: 'views/login.html',
