@@ -3,8 +3,7 @@ qsp.controller('LoginController', function($scope,$http,$location,$rootScope) {
   $scope.errmsg    = "";
   $scope.userID    = $rootScope.userID ? $rootScope.userID : "";
   $scope.activePage = "/home";
-  var renderButton = function(){gapi.signin2.render("signinwithgoogle",{"theme":"dark"});};
-  renderButton();
+
   $scope.go = function(path){
     $location.path(path);
     $scope.activePage = path;
@@ -30,14 +29,6 @@ qsp.controller('LoginController', function($scope,$http,$location,$rootScope) {
       }
     });
   };
-  
-  function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail());
-  }
   
   $scope.signUp = function(){
     var credentials = { username : $scope.userName,
