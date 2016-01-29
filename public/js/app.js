@@ -1,10 +1,10 @@
-// public/js/app.js
-angular.module('sampleApp', ['ngRoute', 
-                             'appRoutes', 
-                             'MainCtrl',
-                             'StatsCtrl',
-                             'LoginCtrl',
-                             'AskedCtrl',
-                             'ProfileCtrl',
-                             'AddQuestionCtrl'                             
-                            ]);
+// // public/js/app.js
+// angular.module('sampleApp', ['ngRoute', 
+//                              'appRoutes', 
+//                              'MainCtrl',
+//                              'StatsCtrl',
+//                              'LoginCtrl',
+//                              'AskedCtrl',
+//                              'ProfileCtrl',
+//                              'AddQuestionCtrl'                             
+//                             ]);
