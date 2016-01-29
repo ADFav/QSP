@@ -7,7 +7,7 @@
     <title>Quick Stupid Poll</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" type = "text/css" href="./css/style.css"> 
+    <!--link rel="stylesheet" type = "text/css" href="./css/style.css"> 
     <!-- custom styles -->
 
     <!-- JS -->
@@ -27,7 +27,7 @@
   
   
   
-  <body ng-app="sampleApp" ng-controller="LoginController">
+  <body ng-app="qsp" ng-controller="LoginController">
     <h1>QSP</h1>
     <nav>
       <ol>
@@ -42,8 +42,8 @@
   </body>
   
   <script>
-    angular.module('qsp', ['ngRoute', 'appRoutes', 'MainCtrl','StatsCtrl','LoginCtrl','AskedCtrl','ProfileCtrl','AddQuestionCtrl']);
-    angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+    var qsp = angular.module('qsp', ['ngRoute', 'appRoutes', 'MainCtrl','StatsCtrl','LoginCtrl','AskedCtrl','ProfileCtrl','AddQuestionCtrl']);
+    qsp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/login.html',
