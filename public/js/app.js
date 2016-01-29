@@ -1,5 +1,5 @@
 // public/js/app.js
-var qsp = angular.module('qsp', ['ngRoute','MainCtrl','StatsCtrl','AskedCtrl','ProfileCtrl','AddQuestionCtrl']);
+var qsp = angular.module('qsp', ['ngRoute','MainCtrl','StatsCtrl','AskedCtrl','ProfileCtrl','AddQuestionCtrl','directive.g+signin']);
 qsp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
