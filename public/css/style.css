@@ -7,8 +7,8 @@ body, html, nav, ol, h1, h2, h3{
   text-align  : center;
 }
 
-h1, input     {font-size : 50px;}
-h2, nav ol li {font-size : 35px;}
+h1, input     {font-size : 3.0rem}
+h2, nav ol li {font-size : 2.0rem;}
 
 body, html {  height : 100%;}
 
@@ -79,18 +79,6 @@ nav ol li:last-child{
   margin-top  : 10%;
 }
 
-#login-div button{
-  margin-top  : 5%;
-  width : 25%;
-  margin-left : auto;
-  margin-right : auto;
-}
-
-#login-div div         {  text-align : center;}
-#login-div div.username{  margin-top : 40%;}
-#login-div div.password{  margin-top : 5%;}
-#login-div div.signUp  {  margin-top : 5%;}
-
 /*---- ADDUSER VIEW ----- */
 #addUser-div input{
   margin-left : 25%;
@@ -98,7 +86,7 @@ nav ol li:last-child{
   display     : block;
 }
 
-#addUser-div div.errmsg{
+#addUser-div .errmsg{
   color       : #F00;
   font-size   : 25px;
   height      : 30px;

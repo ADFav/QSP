@@ -6,7 +6,11 @@ angular.module('AddQuestionCtrl', []).controller('AddQuestionController', functi
   $scope.tagList = ["Lifestyle","Politics","Movies","Music","Books","TV","Sports","Technology","Opinion"];
   $scope.tagResponses = {};
   
-  for(var tag in $scope.tagList){$scope.tagResponses[$scope.tagList[tag]] = false;}
+  var setDefaults = function(){
+    for(var tag in $scope.tagList){$scope.tagResponses[$scope.tagList[tag]] = false;}
+    $scope.text = "";
+    $scope.responses = ["",""];
+  }  
   
   $scope.postQuestion = function(){
     var tagList = [];
@@ -20,8 +24,6 @@ angular.module('AddQuestionCtrl', []).controller('AddQuestionController', functi
     $http.post("/addQuestion",question).then(function(response){
       (response.errmsg) ? ($scope.errmsg = response.errmsg) : $location.path("/addQuestion"); 
     });
-    $scope.text = "";
-    $scope.responses = ["",""];
-    for(var tag in $scope.tagResponses){$scope.tagResponses[tag] = false;}
+    setDefaults();
   };
 });
