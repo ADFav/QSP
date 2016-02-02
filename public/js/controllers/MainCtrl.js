@@ -8,6 +8,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
     $http.get('/getNewQuestion?uid='+$rootScope.userID).success(function(q_obj){
       if(!q_obj.errmsg){
         $scope.question_object = q_obj;
+        console.log($scope.question_object);
         $http.get('/getUser?uid='+q_obj.asker).success(function(user){
           $scope.asker = user.username;
         });
