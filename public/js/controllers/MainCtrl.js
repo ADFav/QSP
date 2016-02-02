@@ -10,6 +10,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
         $scope.question_object = q_obj;
         console.log($scope.question_object);
         $http.get('/getUser?uid='+q_obj.asker).success(function(user){
+          console.log(user);
           $scope.asker = user.username;
         });
       }
@@ -20,6 +21,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
     });
   };  
   
+  $scope.asker = "";
   $scope.question_object = {"_id" : -1, "asker" : -1, "text": "", "responses" : ["", ""], "errmsg": ""};
   $scope.switchQuestion()
   

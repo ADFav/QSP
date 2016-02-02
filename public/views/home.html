@@ -2,7 +2,7 @@
   <div class = "questionBox table">
     <h2>Asked by : <span ng-click="goProfile(question_object.asker)">{{asker}}</span></h2>
     <div class = "centeredText">
-      <h1>{{question_object.question}}</h1>
+      <h1>{{question_object.text}}</h1>
       <h1>{{question_object.errmsg}}</h1>
     </div>
   </div>
@@ -13,7 +13,7 @@
     </div>
     
     <div ng-click="postFalse()" class = "table">
-      <div class = "centeredText"><h2>{{questiton_object.responses[1]}}</h2></div>
+      <div class = "centeredText"><h2>{{question_object.responses[1]}}</h2></div>
     </div>
   </div>
   
