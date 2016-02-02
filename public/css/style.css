@@ -7,28 +7,24 @@ body, html, nav, ol, h1, h2, h3{
   text-align  : center;
 }
 
-h1, input     {font-size : 3.0rem}
-h2, nav ol li {font-size : 2.0rem;}
+h1, input      {font-size : 3.0rem;}
+h2             {font-size : 2.0rem;}
 
 body, html {  height : 100%;}
 
-nav, nav ol{ background-color : #000;}
+nav, nav .row{ background-color : #6b6;}
 
-nav ol li{
+nav .row div{
   background-color : #000;
   border-color     : transparent #FFF #FFF transparent;
   border-style     : solid;
   border-width     : 10px;
   box-sizing       : border-box;
-  color            : #FFF;
-  float            : left;
-  list-style       : none;
-  margin-right     : 1.25%;  
+  color            : #FFF;  
   transition       : 0.25s;
-  width            : 19%;
 }
 
-nav ol li:hover{
+nav .row div:hover{
   background-color : #CCC;
   border-color : transparent #AAA #AAA transparent;
   color : #AAA;  
@@ -66,17 +62,9 @@ nav ol li:last-child{
   box-sizing : border-box;
 }
 /*---- LOGIN VIEW ----- */
-#login-div input{
-  margin-left : 25%;
-  width       : 50%;
-  display     : block;
-}
 
-#login-div div.errmsg{
+#login-div .errmsg{
   color       : #F00;
-  font-size   : 25px;
-  height      : 30px;
-  margin-top  : 10%;
 }
 
 /*---- ADDUSER VIEW ----- */
