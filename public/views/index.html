@@ -7,18 +7,16 @@
     <title>Quick Stupid Poll</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" type = "text/css" href="./css/style.css"> 
-    <link rel="stylesheet" type = "text/css" href="./css/google-plus-signin.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/google-plus-signin.css"> 
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/css/bootstrap.css">
     <!-- custom styles -->
 
     <!-- JS -->
     <script src="./libs/angular/angular.js"></script>
     <script src="./libs/angular-route/angular-route.js"></script>
 
-    <!--ANGULAR CUSTOM -->
-    <!--script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-    <meta name="google-signin-client_id" content="123132454800-mk76q3qhmamd72u900uii446fdbvtlb7.apps.googleusercontent.com"-->
-    
+    <!--ANGULAR CUSTOM -->   
     <script src="js/app.js"></script>
     <script src="js/controllers/google-plus-signin.js"></script>
     <script src="js/controllers/MainCtrl.js"></script>
@@ -32,15 +30,17 @@
   
   
   <body ng-app="qsp" ng-controller="LoginController">
-    <h1>QSP</h1>
-    <nav>
-      <ol>
-        <li ng-click="go('/home')">Home</li>
-        <li ng-click="go('/addQuestion')">Add</li>
-        <li ng-click="go('/askedQuestions')">Asked</li>
-        <li ng-click="go('/answeredQuestions')">Answered</li>
-        <li ng-click="go('/login')">Friends</li>
-      </ol>
+    <h1 style="font-weight:bold">QSP</h1>
+    <nav class = "navbar navbar-default">
+      <div class = "row">
+        <div class = "col-xs-1"></div>
+        <div class = "col-xs-2" ng-click="go('/home')">Home</div>
+        <div class = "col-xs-2" ng-click="go('/addQuestion')">Add</div>
+        <div class = "col-xs-2" ng-click="go('/askedQuestions')">Asked</div>
+        <div class = "col-xs-2" ng-click="go('/answeredQuestions')">Answered</div>
+        <div class = "col-xs-2" ng-click="go('/login')">Friends</div>
+        <div class = "col-xs-1"></div>
+      </div><!--row--> 
     </nav>
   <div class = "container" ng-view></div>
   </body>

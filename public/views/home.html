@@ -1,19 +1,19 @@
 <div id = "home-div">
   <div class = "questionBox table">
-    <h2>Asked by : <span ng-click="goProfile(askerid)">{{asker}}</span></h2>
+    <h2>Asked by : <span ng-click="goProfile(question_object.asker)">{{asker}}</span></h2>
     <div class = "centeredText">
-      <h1>{{question}}</h1>
-      <h1>{{errmsg}}</h1>
+      <h1>{{question_object.question}}</h1>
+      <h1>{{question_object.errmsg}}</h1>
     </div>
   </div>
   
   <div class = "answerRow">
     <div ng-click="postTrue()" class = "table">
-      <div class = "centeredText"><h2>{{response_1}}</h2></div>
+      <div class = "centeredText"><h2>{{question_object.responses[0]}}</h2></div>
     </div>
     
     <div ng-click="postFalse()" class = "table">
-      <div class = "centeredText"><h2>{{response_2}}</h2></div>
+      <div class = "centeredText"><h2>{{questiton_object.responses[1]}}</h2></div>
     </div>
   </div>
   

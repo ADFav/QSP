@@ -1,16 +1,34 @@
 <div id="login-div">
-  <div class="errmsg">{{errmsg}}</div>
+  <div class = "row">
+    <div class = "col-xs-offset-3 col-xs-6 errmsg">{{errmsg}}</div>
+  </div>
   
-  <div class="username"><h1>Username</h1></div>
-  <input type="text" ng-model="userID">
+  <div class = "row">
+    <div class = "col-xs-offset-3 col-xs-6 username"><h1>Username</h1></div>
+  </div>
+  
+  <div class = "row">
+    <input class = "col-xs-offset-3 col-xs-6" type = "text" ng-model="userID">
+  </div>
 
-  <div class="password"><h1>Password</h1></div>
-  <input type="password" ng-model="password">
-
-  <button ng-click="mySubmit()"><h1>Login</h1></button>
+  <div class = "row">
+    <div class = "col-xs-offset-3 col-xs-6 password"><h1>Password</h1></div>
+  </div>
   
-  <google-plus-signin clientid="123132454800-mk76q3qhmamd72u900uii446fdbvtlb7" language="en"></google-plus-signin>
+  <div class = "row">
+    <input class = "col-xs-offset-3 col-xs-6" type="password" ng-model="password">
+  </div>
   
-  <div class="signUp"><h2>Don't have an account? <a href="/addUser">Sign Up here!</a></h2></div>  
+  <div class = "row">
+    <button class = "col-xs-offset-5 col-xs-2 btn-block" ng-click="mySubmit()"><h1>Login</h1></button>
+  </div>
+  
+  <div class = "row">
+    <google-plus-signin clientid="123132454800-mk76q3qhmamd72u900uii446fdbvtlb7" language="en" class = "col-xs-offset-3 col-xs-3"></google-plus-signin>
+  </div>
+  
+  <div class = "row">
+    <div class="col-xs-offset-3 col-xs-6 signUp"><h2>Don't have an account? <a href="/addUser">Sign Up here!</a></h2></div>  
+  </div>
 </div>
 
