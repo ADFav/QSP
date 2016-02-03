@@ -14,7 +14,7 @@ body, html {  height : 100%;}
 
 nav, nav .row{ background-color : #6b6;}
 
-nav .row div{
+.nav-link{
   background-color : #000;
   border-color     : transparent #FFF #FFF transparent;
   border-style     : solid;
@@ -24,20 +24,16 @@ nav .row div{
   transition       : 0.25s;
 }
 
-nav .row div:hover{
+.nav-link:hover{
   background-color : #CCC;
   border-color : transparent #AAA #AAA transparent;
   color : #AAA;  
 }
 
-nav ol li:active, nav ol li.active{
+.nav-link:active, .nav-link.active{
   background-color : #FFF;
   border-color     : transparent #000 #000 transparent;
   color            : #FFF;  
-}
-
-nav ol li:last-child{
-  margin-right : 0;
 }
 
 .container{
